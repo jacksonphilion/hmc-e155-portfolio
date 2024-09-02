@@ -1,1 +1,0 @@
-This repository contains the Quarto files and code to support Jackson Philion's E155 Portfolio website. It was created on Sep. 6, 2024.

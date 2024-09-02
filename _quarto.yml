@@ -9,9 +9,7 @@ website:
         text: Home
       - text: Labs
         menu:
-        - text: All Labs
-          href: labs.qmd
-        - text: Lab 1 - FPGA & MCA Setup & Testing
+        - text: Lab 1 - FPGA & MCU Setup & Testing
           href: labs/lab1/lab1.qmd
         - text: Lab 2 - Multiplexed 7-Segment Display
           href: labs/lab1/lab2.qmd

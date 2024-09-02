@@ -1,0 +1,5 @@
+---
+title: Lab 6
+---
+## Lab 6: The Internet of Things and Serial Peripheral Interface
+Placeholder Text

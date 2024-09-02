@@ -1,4 +1,5 @@
 ---
 Title: Lab 1
 ---
+## Lab 1: FPGA and MCU Setup and Testing
 Placeholder Text

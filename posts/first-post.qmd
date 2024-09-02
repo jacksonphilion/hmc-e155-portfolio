@@ -2,7 +2,7 @@
 title: "Hello Quarto"
 description: "Welcome to my Quarto portfolio"
 author: "Jackson Philion"
-date: "8/23/24"
+date: "9/2/24"
 categories:
   - reflection
   - labreport

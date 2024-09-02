@@ -1,0 +1,40 @@
+project:
+  type: website
+
+website:
+  title: "E155 Portfolio"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Labs
+        menu:
+        - text: All Labs
+          href: labs.qmd
+        - text: Lab 1 - FPGA & MCA Setup & Testing
+          href: labs/lab1/lab1.qmd
+        - text: Lab 2 - Multiplexed 7-Segment Display
+          href: labs/lab1/lab2.qmd
+        - text: Lab 3 - Keypad Scanner
+          href: labs/lab1/lab3.qmd
+        - text: Lab 4 - Digital Audio
+          href: labs/lab1/lab4.qmd
+        - text: Lab 5 - Interrupts
+          href: labs/lab1/lab5.qmd
+        - text: Lab 6 - IoT & SPI
+          href: labs/lab1/lab6.qmd
+        - text: Lab 7 - Advanced Encryption Standard
+          href: labs/lab1/lab7.qmd
+      - href: blog.qmd
+        text: Blog
+      - href: resources.qmd
+        text: Resources
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+

@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "E155 Blog",
     "section": "",
-    "text": "My Learning Goals\n\n\n\n\n\nA discussion of what I want to get out of E155: Microprocessors\n\n\n\n\n\nSep 2, 2024\n\n\nJackson Philion\n\n\n\n\n\n\nNo matching items"
+    "text": "Lab 1 Reflection\n\n\n\n\n\nA brief reflection on Lab 1: Seven Segment Display\n\n\n\n\n\nSep 8, 2024\n\n\nJackson Philion\n\n\n\n\n\n\n\n\n\n\n\n\nMy Learning Goals\n\n\n\n\n\nA discussion of what I want to get out of E155: Microprocessors\n\n\n\n\n\nSep 2, 2024\n\n\nJackson Philion\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -14,72 +14,23 @@
     "text": "Hello! My name is Jackson Philion. I’m a senior engineering student at Harvey Mudd College with a focus in Electrical Engineering and experience in Hardware and Systems Engineering. I attended Concord Academy high school in Concord, Massachusetts, before graduating in 2020 and spending a gap year pursuing web development at Egghead Ventures and R&D testing and prototyping at Cobra Puma Golf. I have since worked with Sol Clarity, a green energy start-up where I helped design the hardware for their upcoming field trial. After studying abroad at the University of Canterbury in New Zealand in their Electrical Engineering department, I look forward to starting a career in the semiconductor industry. I get excited about helping us pave the way towards a future with safer, more sustainable, and mind-bogglingly powerful silicon devices."
   },
   {
-    "objectID": "labs/lab4/lab4.html",
-    "href": "labs/lab4/lab4.html",
-    "title": "Lab 4",
+    "objectID": "posts/lab1-post.html",
+    "href": "posts/lab1-post.html",
+    "title": "Lab 1 Reflection",
+    "section": "",
+    "text": "As I write this reflection, I am still riding the high of making 2 major adjustments to my Lab 1 source code – with nary an error along the way. It’s an incredible feeling. However, don’t get me wrong – I still failed. A lot. Like, way more than I usually do. But, that failure was intentional. It was a stated part of my learning goals, and I can tell it’s already paying dividends.\nReferring back to my first post on learning goals, I only listed a brief two. I felt that these most effectively summarized the litany of knowledge and skills which I hoped to gain from this course.\n\nGain an understanding of FPGAs and their applications; and\nIncrease my Autonomy (by failing more often).\n\nLab 1 did indeed give me my first introduction to FPGAs. I understand them now as powerful tools which may be simply harnessed using SystemVerilog and Lattice Radiant. That is to say, I understand how one can put most any desired hardware into SystemVerilog language, program it onto an FPGA, then connect that virtual hardware to the outside world through simple pin assignments. The limit is only drawn by your FPGA’s… capacity? Size? Configuration? I’m still sorting out the specific details, but my point stands – I recognize FPGAs for the effective tools they are, and can’t wait to jump into Lab 2 with this knowledge next week.\nHowever, I want to focus this reflection on my second learning goal, as I think it has seen the most impact thus far. Do you recall me saying that I failed a lot? Well, I meant it. I went into the MicroPs lab 6/7 days of the week to get this lab done to my expectation, and spent 18 hours working on it outside of class. Where did this time go? So little of it went towards what I traditionally consider “succeeding.”\nConsider a hallmark of Jackson Philion’s workflow – the first draft gets submitted. I agonize over each sentence, demanding near-perfection from every line, but make no mistake – once the final sentence has been written, I do not read it again. These 6 days in the lab did not follow this usual workflow. I revisited the same chunks of code over multiple days, making revisions on already-functioning pieces to polish up the result. Nor did these days meet my traditional standard for success, as I went home on more than half of them knowing that I would see the same error messages tomorrow. Two years ago, I would have been infuriated with these “failings” and “inefficiencies”. A year ago, heck even a couple months ago, I would have gone on hours-long lab binges until I could leave with a sense of success. Now, don’t get me wrong, I still had one lab binge… after all, we’re all just works in progress, right? However, as I sit here still riding the high of my relatively error-free night, I feel success in those days that I failed. I think back, and I realize that I never felt that sense of impending doom called failure. I looked forward to taking my next crack at it tomorrow, during my planned lab time. While I worked alongside friends, I didn’t lean on them to help me resolve my errors to the usual extent. I made an intentional effort to let myself try and fail at least 3 times. Most often, this resulted in a new piece of learning that may not have been conveyed otherwise. Instead of feeling like agony, these moments were more jovial than I expected.\nI think I am reveling in the challenge that this class represents. As I have mentioned before, I have been hearing about this class and building up to it since I was a freshman. I think I have bought into some vision that this is the class which is meant to forge oneself into a high-performing professional. In this mindset, it is easy for me to embrace new workflows, new schedules, and new failures. It’s easy to start week one of the course and give it my all, and it’s easy to see the success and learning that failing autonomously has brought me. After 18 hours spent combing through documentation and forums, I am proud to say that my most recent edits had no errors because I had already gotten them all. Not because I was perfect, but because I failed and revised enough to find the right path. And right now, it feels great.\nLooking forward, I am considering what next week will bring. To make a crude analogy, I feel like I am feasting on ham after winning the war’s first summertime battle. I fought, I struggled, and I won. I was surrounded by my A-team… tutorials, quick-start guides, and similar week-one aids. I didn’t have other classes yet vying for my attention. In short: I was surrounded by things that made it easy to fail and get right back up again. However, this is a semester-long class, not a summer workshop. I need to win the war, not just the battle. I need to win the battle in the dead winter when supplies have been low for weeks. Sure, I’m on the right track now, but will I still be when my first Politics essay is due? When technical work with HRL Labs Clinic begins in earnest? When I come back from Thanksgiving break and have to motivate through Finals? I think I need to spend some time preparing for that eventuality, rather than letting it get the best of me.\nThat is to say, this week I am feeling great. I am thoroughly excited to pursue the rest of this coursework, and to try out new things: failing, reflecting in these posts, writing up my work thoroughly, partitioning the workload like a job. But I’m nervous to see how I respond when failing starts to feel… not good. That will be the true test of my learning goals. I can’t tell whether I actually want that point to come or not. For now, I guess we’ll remain in suspense until next week. September 8, 2024."
+  },
+  {
+    "objectID": "labs/lab3/lab3.html",
+    "href": "labs/lab3/lab3.html",
+    "title": "Lab 3",
     "section": "",
     "text": "Placeholder Text"
   },
   {
-    "objectID": "labs/lab4/lab4.html#lab-4-digital-audio",
-    "href": "labs/lab4/lab4.html#lab-4-digital-audio",
-    "title": "Lab 4",
-    "section": "",
-    "text": "Placeholder Text"
-  },
-  {
-    "objectID": "labs/lab2/lab2.html",
-    "href": "labs/lab2/lab2.html",
-    "title": "E155 Portfolio",
-    "section": "",
-    "text": "Placeholder Text"
-  },
-  {
-    "objectID": "labs/lab2/lab2.html#lab-2-multiplexed-7-segment-display",
-    "href": "labs/lab2/lab2.html#lab-2-multiplexed-7-segment-display",
-    "title": "E155 Portfolio",
-    "section": "",
-    "text": "Placeholder Text"
-  },
-  {
-    "objectID": "labs/lab7/lab7.html",
-    "href": "labs/lab7/lab7.html",
-    "title": "Lab 7",
-    "section": "",
-    "text": "Placeholder Text"
-  },
-  {
-    "objectID": "labs/lab7/lab7.html#lab-7-the-advanced-encryption-standard",
-    "href": "labs/lab7/lab7.html#lab-7-the-advanced-encryption-standard",
-    "title": "Lab 7",
-    "section": "",
-    "text": "Placeholder Text"
-  },
-  {
-    "objectID": "labs/lab1/lab1.html",
-    "href": "labs/lab1/lab1.html",
-    "title": "E155 Portfolio",
-    "section": "",
-    "text": "Placeholder Text"
-  },
-  {
-    "objectID": "labs/lab1/lab1.html#lab-1-fpga-and-mcu-setup-and-testing",
-    "href": "labs/lab1/lab1.html#lab-1-fpga-and-mcu-setup-and-testing",
-    "title": "E155 Portfolio",
-    "section": "",
-    "text": "Placeholder Text"
-  },
-  {
-    "objectID": "labs/lab6/lab6.html",
-    "href": "labs/lab6/lab6.html",
-    "title": "Lab 6",
-    "section": "",
-    "text": "Placeholder Text"
-  },
-  {
-    "objectID": "labs/lab6/lab6.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
-    "href": "labs/lab6/lab6.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
-    "title": "Lab 6",
+    "objectID": "labs/lab3/lab3.html#lab-3-keypad-scanner",
+    "href": "labs/lab3/lab3.html#lab-3-keypad-scanner",
+    "title": "Lab 3",
     "section": "",
     "text": "Placeholder Text"
   },
@@ -98,16 +49,107 @@
     "text": "Placeholder Text"
   },
   {
-    "objectID": "labs/lab3/lab3.html",
-    "href": "labs/lab3/lab3.html",
-    "title": "Lab 3",
+    "objectID": "labs/lab6/lab6.html",
+    "href": "labs/lab6/lab6.html",
+    "title": "Lab 6",
     "section": "",
     "text": "Placeholder Text"
   },
   {
-    "objectID": "labs/lab3/lab3.html#lab-3-keypad-scanner",
-    "href": "labs/lab3/lab3.html#lab-3-keypad-scanner",
-    "title": "Lab 3",
+    "objectID": "labs/lab6/lab6.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
+    "href": "labs/lab6/lab6.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
+    "title": "Lab 6",
+    "section": "",
+    "text": "Placeholder Text"
+  },
+  {
+    "objectID": "labs/lab1/lab1.html",
+    "href": "labs/lab1/lab1.html",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "",
+    "text": "Quick Stats\nTime Spent: 18 Hours\nSystemVerilog Modules Written: 4\nSoftware Installs/Tutorials: 4\nTestbench: Eventual Success\nOverall: Success\nSee my Blog Reflection for more!"
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#prelab-skills",
+    "href": "labs/lab1/lab1.html#prelab-skills",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Prelab Skills",
+    "text": "Prelab Skills\nLab 1 introduces students to some foundational elements of the class before asking them to do their first piece of generative design work. Chiefly, it introduces students to three key softwares that will be essential to success throughout the rest of the class:\n\nThe FPGA design software Radiant Lattice, which is used for implementing designs onto the FPGA and mapping pin ins and outs. This is new to most students.\nThe MCU design system SEGGER Embedded Studio, which most students have experience with but have not yet connected to an ARM processor.\nGit and Github tools, which is a required organizational tool in this class due to its importance throughout personal and professional work in coding and electrical engineering.\nQuarto website builder, a software system added as an extension to VSCode which has allowed me to build up this portfolio.\n\nFor all intents and purposes, I was a complete beginner with all three of these tools. Thus, the majority of my work in Lab 1 was spent combing through posted class tutorials, checking with online walkthroughs, and building shorthand cheat sheets to help contain the rush of new information. The good news? I now feel comfortable building a raw .sv file from scratch and using Radiant Lattice and Modelsim to integrate and push it to the FPGA. I also feel more confident than I should about building out a test bench – I have yet to integrate an automated one successfully, but I can imagine what I will change for my next iteration in lab 2. It successfully compiled but failed to pull in my testvector.tv file. I realize now that it was in fact a hidden testvector.tv.txt file – Windows has to stop hiding extensions! I also have numerous working testbenches to pull from in my E85 digital electronics work, and thoroughly enjoyed the satisfaction back then of writing a thorough test bench! All that is to say, I am excited to refine my testbench next week and feel confident that I have a route forward. This lab did not involve SEGGER to any significant degree, so I will hold off discussion of that software until a future week.\nI have also built a basic level of fluency with git – I’m happy to report that the cheatsheats barely get any use! Initializing, adding, branching, committing, pushing and pulling are second nature at this point. This was due partially to a hugh warm up period in which I accidentally created 4 different repositories for Lab 1. Combing through this mess to understand what happened and how to fix it contributed significantly to my learning. I still have to look up some commands for finding the correct remote address, and sometimes find myself using the GitHub desktop app for some arranging. However, I mostly use the bash command terminal, and have gotten comfortable interfacing with the lab computers to continue coding projects across any desktop I choose. I still need to build significant fluency with merging and managing branches after creation. I can walk through the steps, but I am left uncomfortable with more than one branch left open at a time and often delete branches immediately after their creation. I think I have yet to fully understand how branches will be a benefit to my work.\nQuarto is also a work in progress. Consider the design of this page my first real world test of this skill – did I succeed? How can I improve? This is what I will ask myself in preparation for my lab 2 page next week."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#lab-task-seven-segment-display",
+    "href": "labs/lab1/lab1.html#lab-task-seven-segment-display",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Lab Task: Seven Segment Display",
+    "text": "Lab Task: Seven Segment Display\nAfter the preliminary skills introduction, the primary task of Lab 1 is rather simple.\nThe task:\n\nTake as an input 4 switches, set in order to each represent a consequitve input bit.\nControl a seven segment display to read out the 16 hexidecimal digits from 0 to 15 (or h0 to hF), which correspond to the 4 bit input.\nIn addition, control 3 onboard LEDs to obey the following truth tables with relation to the switch inputs:\n\n\nTable 1: led[0] Truth Table\n\n\nS1\nS0\nled[0]\n\n\n\n\n0\n0\nOFF\n\n\n0\n1\nON\n\n\n1\n0\nON\n\n\n1\n1\nOFF\n\n\n\n\n\n\nTable 2: led[1] Truth Table\n\n\nS3\nS2\nled[1]\n\n\n\n\n0\n0\nOFF\n\n\n0\n1\nOFF\n\n\n1\n0\nOFF\n\n\n1\n1\nON\n\n\n\n\n\n\nTable 3: led[2] Truth Table\n\n\nled[2]\n\n\n\n\nBlink at 2.4 Hz\n\n\n\n\n\nWith the task laid out, and my skills adequately built up, I tackled the lab by first attempting to understand the seven segment display."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#understanding-the-display-inputs-and-outputs",
+    "href": "labs/lab1/lab1.html#understanding-the-display-inputs-and-outputs",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Understanding the Display, Inputs, and Outputs",
+    "text": "Understanding the Display, Inputs, and Outputs\nI began my task by trying to understand the seven segment display. This would give me an idea of how many signals I needed to run to it, and how to map out a truth table which would describe each hex number. My selected display unit had a clearly printed serial number on it, which corresponded to the following Jameco Link and the following data sheet. Based on these resources, I derived that I could control the segments of my display via the following pin mapping:\n\n\n\n\n\n\nFigure 2: Seven segment display pin mapping\n\n\n\nNote that this component uses a Common Anode, attached to the manufacturer’s pin 3 and pin 8 of the display. That is to say, by connecting my high voltage rail (in this case 3.3V) to either pin 3 or 8, it would supply the positive anode for every segment. The pins then could be controlled at logic high, leaving the segment off with 0V across it, or logic low, to supply the voltage differential which draws current through the segment and illuminates it. However, the forward voltage of these segment diodes is listed at 2.1V with a maximum forward current of 30 mA [see Jameco Datasheet]. Thus, in order to limit the current, as well as to bridge the remaining 1.2V gap between the positive rail and ground, a resistor needs to be added in series with the segment. In order to reduce the current load on my chip, I chose to operate the segments at a relatively low 5mA of forward current. Using this 1.2V gap and 5mA desired current, I was able to calculate a desired resistor value of 240 Ohms. Figure 3 below elucidates this point by supplying additional calculations and equations.\n\n\n\n\n\n\nFigure 3: Current calculations for seven segment display\n\n\n\nI chose to wire a resistor up to each segment in order to illuminate the segments equally brightly. If I chose to wire two segments up with the same resistor to ground, there would be no issue – the calculations might change, but with an operating current range between 5 and 30 mA, there is plenty of room to drive multiple segments with the same resistor. However, this would cause inequalities in current across the segments of the display, causing inequalities in illumination intensity. To maintain the same visible level of illumination, I thus opted to use a resistor for each segment I chose to illuminate. You can look ahead at the schematic I use down in Figure 6.\nI finally had to decide how I wanted to illuminate the display to represent each digit. I first drew a design of each character as it would appear on the display, as seen in the upper portion of Figure 3 below. Understanding that I would need 7 lines of input to control the desired segments, I was able to determine that I needed an output signal of seg[6:0]. Using the digit design and these seg outputs, I then derived the truth table in the lower portion of Figure 4. This truth table allows me to describe exactly which signals need to be illuminated to represent each digit. Note a blank square is an implied 0, or “seg[i] off.”\n\n\n\n\n\n\nFigure 4: Digit design and truth table\n\n\n\nFinally, there is the matter of the 3 onboard leds which should map to the oscillator and input switches. However, both led0 and led1 may be represented by simple “xor” and “and” operations in the FPGA, respectively. The final led2 output was dictated by an oscillator which similarly might be represented by an operation on the FPGA. None of the led signals required any external hardware that was not already onboard the E155 development board. Thus, I did not consider these outputs until I did my design in SystemVerilog.\nWhich is a perfect segue into the next section! Having understood the functionality of the display, the circuitry I needed to construct around it, and the truth table I wanted to implement, I finally had to consider how I would use the FPGA to generate my seg[6:0] and led[2:0] signal outputs using SystemVerilog language."
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#system-design",
+    "href": "labs/lab1/lab1.html#system-design",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "System Design",
+    "text": "System Design\nI had most fun in this lab with the system design in SystemVerilog. It was always one of my favorite pieces of E85 Digital Electronics, and this held true for this first lab of E155. Figure 5 below describes the abstract view of inputs and outputs that my SystemVerilog modules are based upon.\n\n\n\n\n\n\nFigure 5: SystemVerilog Block Diagram\n\n\n\nUsing this diagram, I began to build out my code in SystemVerilog. You can find my .sv code files at in by Lab 1 github repository here.\nAdditionally, you can find the final schematic in Figure 6 below. Note that I hooked up my breadboard pins first at my convenience, then went back after the fact and used Lattice Radiant to assign the pin outputs. This schematic also shows how I hooked the seven segment display up with the common anode and separate resistor for each segment.\n\n\n\n\n\n\nFigure 6: Schematic and pin mappings"
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#simulation",
+    "href": "labs/lab1/lab1.html#simulation",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Simulation",
+    "text": "Simulation\nAfter writing my code, I endeavored to simulate its proper function using ModelSim. Note that I would have wanted to use the Questa simulator built into Lattice Radiant, but licensing issues left me using the good old desktop app instead. I first ran a series of forces to set my inputs and verified that each output read as intended. The results of this may be seen in Figure 7 below. Note that the raw image may be viewed, along with the source code, at my Github here.\n\n\n\n\n\n\nFigure 7: Forced simulation demonstrating proper inputs and outputs\n\n\n\nHowever, I wanted to stretch myself to write an automatic testbench instead. I believe that this skill will be instrumental for my SystemVerilog going forward, and I wanted to dust off my testbench-writing-chops right away. After many attempts (and finally removing the .txt extension from my .tv file), I was successful! It does not yet run automatically, needing instead to be fed the command “run 163” after simulation start. Yet, the test bench displays zero errors across each test case (which was all of them). It loads and evaluates each test vector from the .tv file. I am incredibly pleased, and aim to jump off of this first test bench in order to write my next one for lab 2. The successful run results may be seen in Figure 8 below, yet again, the raw image may be found on my github here.\n\n\n\n\n\n\nFigure 8: Testbench simulation demonstrating proper ins and outs, loading of test vectors, and zero errors"
+  },
+  {
+    "objectID": "labs/lab1/lab1.html#completed-system",
+    "href": "labs/lab1/lab1.html#completed-system",
+    "title": "Lab 1: FPGA and MCU Setup and Testing",
+    "section": "Completed System",
+    "text": "Completed System\nFinally, with a system designed and tested, I prepared to upload it to my FPGA. I ran into multiple errors on one particular lab computer with programming. While the computer could detect the FPGA and the linking cable, the connection would fail when trying to run the final step. However, after switching to a new computer which a friend had used successfully, I was able to download the code to my system and demonstrate its success! The LED system worked as intended. I did not carefully clock the frequency of led[2], intended to be 2.4Hz. It was certainly doing between 2-3 cycles per second, so I assumed that it was working as intended. However, next time, testing this more thoroughly may reveal further issues for investigation – hard to say without nailing down a measured frequency. However, back to the success! Below you can find Figure 9 with the full system shown, as well as Figure 10 demonstrating that the seven segment display responds as intended with equally bright segments.\n\n\n\n\n\n\nFigure 9: The completed system\n\n\n\n\n\n\n\n\n\nFigure 10: Demonstration of each digit illuminated correctly in final design\n\n\n\nThus concludes my interactions with Lab 1. You can find a reflection of this weeks work in the blog postings, or can head on over to Lab 2 and see what’s next! Spoiler alert: We’re going to try and double the amount of displays without doubling the GPIO burden."
+  },
+  {
+    "objectID": "labs/lab7/lab7.html",
+    "href": "labs/lab7/lab7.html",
+    "title": "Lab 7",
+    "section": "",
+    "text": "Placeholder Text"
+  },
+  {
+    "objectID": "labs/lab7/lab7.html#lab-7-the-advanced-encryption-standard",
+    "href": "labs/lab7/lab7.html#lab-7-the-advanced-encryption-standard",
+    "title": "Lab 7",
+    "section": "",
+    "text": "Placeholder Text"
+  },
+  {
+    "objectID": "labs/lab2/lab2.html",
+    "href": "labs/lab2/lab2.html",
+    "title": "E155 Portfolio",
+    "section": "",
+    "text": "Placeholder Text"
+  },
+  {
+    "objectID": "labs/lab2/lab2.html#lab-2-multiplexed-7-segment-display",
+    "href": "labs/lab2/lab2.html#lab-2-multiplexed-7-segment-display",
+    "title": "E155 Portfolio",
+    "section": "",
+    "text": "Placeholder Text"
+  },
+  {
+    "objectID": "labs/lab4/lab4.html",
+    "href": "labs/lab4/lab4.html",
+    "title": "Lab 4",
+    "section": "",
+    "text": "Placeholder Text"
+  },
+  {
+    "objectID": "labs/lab4/lab4.html#lab-4-digital-audio",
+    "href": "labs/lab4/lab4.html#lab-4-digital-audio",
+    "title": "Lab 4",
     "section": "",
     "text": "Placeholder Text"
   },

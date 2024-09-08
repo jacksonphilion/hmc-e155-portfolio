@@ -2,6 +2,15 @@
 Title: Lab 1
 tbl-cap-location: bottom
 ---
+
+**Quick Stats**\
+Time Spent: 18 Hours\
+SystemVerilog Modules Written: 4\
+Software Installs/Tutorials: 4\
+Testbench: Eventual Success\
+Overall: Success\
+See my Blog Reflection for more!
+
 # Lab 1: FPGA and MCU Setup and Testing
 
 ::: {#fig-full-system}

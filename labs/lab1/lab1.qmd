@@ -118,7 +118,7 @@ Which is a perfect segue into the next section! Having understood the functional
 I had most fun in this lab with the system design in SystemVerilog. It was always one of my favorite pieces of E85 Digital Electronics, and this held true for this first lab of E155. @fig-block-diagram below describes the abstract view of inputs and outputs that my SystemVerilog modules are based upon.
 
 ::: {#fig-block-diagram}
-![](images/svBlockDiagram.png)
+![](images/blockDiagram.jpeg)
 
 SystemVerilog Block Diagram
 :::

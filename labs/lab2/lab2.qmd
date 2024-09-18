@@ -11,7 +11,8 @@ Resulting Unnecessary Wiring Harnesses: 2\
 Testbench: Automatic\
 Dual Display: Steady, Discrete, and Illuminated\
 Overall: Success\
-See my Blog Reflection for more!
+
+See my Blog Reflection for more! Dare I say, it contains a particular treat this week.
 
 # Lab 2: Multiplexed 7-Segment Display
 

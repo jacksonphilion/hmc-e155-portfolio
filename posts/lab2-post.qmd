@@ -1,6 +1,6 @@
 ---
 title: "Lab 2 Reflection"
-description: "A reflection on Lab 2, why I made a wire octopus, and more"
+description: "A reflection on Lab 2 and why I made a wire octopus."
 author: "Jackson Philion"
 date: "9/18/24"
 categories:
@@ -23,7 +23,7 @@ Then I asked a class TA and sure enough, he meant just that. I had to get my dig
 
 The more I thought about it, the more it represented an interesting challenge. Say you wanted to leave your breadboard flat on the table and read out the digits "upright to the viewer". One would have to create some sort of contraption to hold the display in place in this upright position. Then, how would one get the electrical contacts to the LED display? A custom wiring harness would do it. As I peeked ahead at Lab 3, I saw that we will use the same hardware again... Wouldn't that be something cool to bring forward? A standalone LED display with a custom wiring harness that connected up to my development board?
 
-With this idea in mind, and the hope that I had time to spare this week, I got straight to work on my hardware schematic and standalone display setup. I figured that I would need to design the hardware from the ground up in order to accomodate this detachable display. I cracked open my favorite CAD software (Onshape), grabbed a pair of calipers, and modelled up this little guy below.
+With this idea in mind, and the hope that I had time to spare this week, I got straight to work on my hardware schematic and standalone display setup. I figured that I would need to design the hardware from the ground up in order to accommodate this detachable display. I cracked open my favorite CAD software (Onshape), grabbed a pair of calipers, and modelled up this little guy below.
 
 ![](images/lab2post/solidworksRender.png)
 
@@ -80,7 +80,7 @@ What did I learn from this? Ironically, it wasn't really a lesson learned as muc
 
 ## Tragedy – 'Twas all for naught
 
-At this point, I had resigned to prototyping on a flat display before trying out my new harness and standalone unit on a working final prototype. Working in lab one day, I heard my friend Alisha laughing at my ocotpus display. Alisha is one who is likely to strive for excellence marks, so I challenged her: "How did you meet that spec then?" 
+At this point, I had resigned to prototyping on a flat display before trying out my new harness and standalone unit on a working final prototype. Working in lab one day, I heard my friend Alisha laughing at my octopus display. Alisha is one who is likely to strive for excellence marks, so I challenged her: "How did you meet that spec then?" 
 
 She looked at me with blank eyes and said: "Jackson, what spec? It does not need to be upright."
 
@@ -88,6 +88,6 @@ After I confirmed with the professor that I had misread the spec, an incredulous
 
 ## Conclusion and Reflection
 
-I think the moral of the story here is that I got overexcited then burnt out too quickly. I still completed a successful lab, albiet way out of the time I had allotted. I still have a great write-up to show for it, and some cool parts that could one day stand alone. I learned a valuable lesson about clarifying specifications at the source, and paying closer attention to when I'm doing something that I don't see anyone else doing. While that can sometimes be good, it is likely more often a sign that I had missed or misunderstood something. I am, after all, surrounded by some of the best and brightest at Mudd – I am far from the only overzealous one, and certainly not the only one striving to meet all excellence specs.
+I think the moral of the story here is that I got overexcited then burnt out too quickly. I still completed a successful lab, albeit way out of the time I had allotted. I still have a great write-up to show for it, and some cool parts that could one day stand alone. I learned a valuable lesson about clarifying specifications at the source, and paying closer attention to when I'm doing something that I don't see anyone else doing. While that can sometimes be good, it is likely more often a sign that I had missed or misunderstood something. I am, after all, surrounded by some of the best and brightest at Mudd – I am far from the only overzealous one, and certainly not the only one striving to meet all excellence specs.
 
 In a more technical sense, I want to get better at writing my testbenches. I did alright this time around, but my display Multiplexer test bench only hit my personal *bare minimum*. The key thing holding me back here is understanding how to replace the HSOSC module with a testbench generated signal, and understanding how this plays into my test vector readout. I hesitated this time around because I didn't want to spend forever debugging the *testbench* alone, rather than the real system. Increasing my proficiency on this front would be a great boon to my EE skills going forward, both in this course and as a practicing professional.

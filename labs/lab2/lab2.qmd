@@ -30,7 +30,7 @@ Lab 2 asks students to build on this system by adding a second set of switches w
 
 ## Enter: Time Multiplexing
 
-We can use time multiplexing to accomplish our double display task. Time multiplexing gives designers a way to utilize common hardware for different inputs and outputs. For example, in a high speed processor, having a unique data line going between every part inside would waste space and be expensive. Instead, designers create a shared pathway, letting different units use it to communicate at different times. I think of it like a landline in a time before cell phones – not every member of the family needs their own. You can install one for the whole house, then schedule a time for each family member to make their calls. Voila, you have time multiplexed your house! Take a look at @fig-time-mult below. Here, you see a block diagram illustating the idea, as well as a timing diagram describing how one might lay out the signals in time.
+We can use time multiplexing to accomplish our double display task. Time multiplexing gives designers a way to utilize common hardware for different inputs and outputs. For example, in a high speed processor, having a unique data line going between every part inside would waste space and be expensive. Instead, designers create a shared pathway, letting different units use it to communicate at different times. I think of it like a landline in a time before cell phones – not every member of the family needs their own. You can install one for the whole house, then schedule a time for each family member to make their calls. Voila, you have time multiplexed your house! Take a look at @fig-time-mult below. Here, you see a block diagram illustrating the idea, as well as a timing diagram describing how one might lay out the signals in time.
 
 ::: {#fig-time-mult}
 ![](images/timeMultiplexing.jpg)
@@ -146,4 +146,4 @@ After assembling the final pieces together and running the programmer, the syste
 Complete system
 :::
 
-A final reminder that full images, source code, and more can be found in this lab's Github [here](https://github.com/jacksonphilion/e155_lab2). In addition, to learn more about the mysterious "Misunderstood Idea" and "Unneccessary" 3D prints and wire harnesses that I mentioned in the top stats, check out my blog post for this week! So much work gone to... well, not waste, but... to the blog post! Until next week.
+A final reminder that full images, source code, and more can be found in this lab's Github [here](https://github.com/jacksonphilion/e155_lab2). In addition, to learn more about the mysterious "Misunderstood Idea" and "Unnecessary" 3D prints and wire harnesses that I mentioned in the top stats, check out my blog post for this week! So much work gone to... well, not waste, but... to the blog post! Until next week.

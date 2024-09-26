@@ -1,4 +1,5 @@
 ---
 title: "Resources"
 ---
+My Github: [Link to Website](https://www.github.com/jacksonphilion)
 E155 Course Website: [Link to Website](https://hmc-e155.github.io/)

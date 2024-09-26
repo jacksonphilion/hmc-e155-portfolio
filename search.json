@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "E155 Portfolio",
     "section": "",
-    "text": "Hello! My name is Jackson Philion. I’m a senior engineering student at Harvey Mudd College with a focus in Electrical Engineering and experience in Hardware and Systems Engineering. I attended Concord Academy high school in Concord, Massachusetts, before graduating in 2020 and spending a gap year pursuing web development at Egghead Ventures and R&D testing and prototyping at Cobra Puma Golf. I have since worked with Sol Clarity, a green energy start-up where I helped design the hardware for their upcoming field trial. After studying abroad at the University of Canterbury in New Zealand in their Electrical Engineering department, I look forward to starting a career in the semiconductor industry. I get excited about helping us pave the way towards a future with safer, more sustainable, and mind-bogglingly powerful silicon devices."
+    "text": "Hello! My name is Jackson Philion. I’m a senior engineering student at Harvey Mudd College with a focus in Electrical Engineering. I have experience with Digital Design, MCU and FPGA programming in C and SystemVerilog, and love blending these aspects with work in Hardware Engineering.\nThis website contains a record of my work at Mudd in E155: Microprocessor-based Systems. Combining a STM32 MCU on the same board with a iCE40 FPGA, this class challenges students to build their electrical skills while ensuring they have the thorough documentation to back it up. Check out the Labs tab above to see more. Note that this website is under active development as the class proceeds throughout Fall 2024!\nAfter graduating from Concord Academy high school in 2020, I decided to take a gap year to explore my interests in Computer Science and Engineering. I began working with Cobra Puma Golf’s Innovation department to test and prototype new club heads and competitive technology, and finished working with Egghead Ventures on web development and new product prototyping. I returned to Egghead Ventures the following year, as well as taking on a role as a Head Counselor at my high school summer camp. I have since worked with Sol Clarity, a green energy start-up based in Boston, where I designed hardware and produced technical drawings for their upcoming field trial. After studying abroad in New Zealand with the University of Canterbury’s Electrical Engineering department, I look forward to launching a career which aligns with my varied interests. I hope to find the team which lets me design and implement digital circuits while making sure I have the hardware to back it up!\nCheck out the card links below to view my Github and Linkedin."
   },
   {
     "objectID": "posts/first-post.html",
@@ -277,6 +277,6 @@
     "href": "resources.html",
     "title": "Resources",
     "section": "",
-    "text": "E155 Course Website: Link to Website"
+    "text": "My Github: Link to Website E155 Course Website: Link to Website"
   }
 ]

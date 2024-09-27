@@ -1,5 +1,46 @@
 ---
 title: Lab 3
+tbl-cap-location: bottom
 ---
-## Lab 3: Keypad Scanner
-Placeholder Text
+
+**Quick Stats**\
+Time Spent: 21 Hours, 35 Minutes, 14 Seconds\
+Misunderstood Ideas: 1\
+Resulting Unnecessary 3D Prints: 1\
+Resulting Unnecessary Wiring Harnesses: 2\
+Testbench: Automatic\
+Dual Display: Steady, Discrete, and Illuminated\
+Overall: Success\
+
+See my Blog Reflection for more!
+
+# Lab 3: Keypad Scanner
+
+::: {#fig-working-system}
+![](images/systemPreview.jpeg)
+
+Preview of Working System
+:::
+
+## Lab Task: Out with the Switches, In with the Keypad
+
+Recall that in Lab 1, students used their FPGA to control a seven segment display. Lab 2 added an additional layer of complexity, asking students to double the inputs and double the displays *without* doubling the hardware and GPIO burden.
+
+Lab 3 gives students a straightforward task. Maintaining the dual display system, swap out your 8 switch inputs for an 8-pin, 16 button keypad. With the goal in mind, let's dive right in!
+
+## Understanding the Hardware
+
+::: {#fig-keypad}
+![](images/keypad.jpeg)
+
+Keypad
+:::
+
+The keypad took me some tinkering to understand fully. Pictured above, it has 8 pin outputs, labelled 1 to 8 from left to right. The pins create a 4x4 matrix, where each node represents a switch. Pressing a particular button connects that node's column line to that node's row line. In this way, each of the 16 buttons may be represented by a unique connection between one row line and one column line. By using a multimeter to reveal continuity, I created the following scratch note sheet for myself to describe the connections between each pin. Note that the layout in @fig-keypad-notesheet below match the orientation of the buttons in @fig-keypad above.
+
+::: {#fig-keypad-notesheet}
+![](images/keypadSchematic.jpeg){width=50%}
+
+Keypad Notesheet
+:::
+

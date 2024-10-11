@@ -1,6 +1,6 @@
 ---
-title: "The limitations of C"
-description: "What the job hunt is teaching me about coding and myself."
+title: "The Limitations of C and Me"
+description: "What the job search is teaching me about coding and myself."
 author: "Jackson Philion"
 date: "10/10/24"
 categories:

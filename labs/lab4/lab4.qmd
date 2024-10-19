@@ -1,5 +1,59 @@
 ---
 title: Lab 4
+draft: True
 ---
+
+**Quick Stats**\
+Time Spent: 21 Hours, 45 Minutes, 57 Seconds\
+SystemVerilog Modules: 10\
+Total FSM States Created: 16\
+Testbenches: 5\
+Time Wasted on a Busted Keyboard: 1 hour 13 minutes\
+Mind Melting Bugs: 2\
+Buttons Mashed for Testing Purposes: a lot\
+Overall: Success\
+
+See my Blog Reflection for more!
+
 ## Lab 4: Digital Audio
-Placeholder Text
+
+{{< video https://www.youtube.com/watch?v=uw_GiBIc0iA >}}
+
+## Lab Task: Intro to MCU and Writing Effective Headers
+
+Lab 4 tasks students with creating a digital audio system capable of playing a simple tone-based song. Enabled by the MCU for the first time, rather than the FPGA, this lab has an added challenge. Typically, a STM32 programmer would use CMSIS, a standardized framework built for helping users implement MCU functions easily and consistently. Instead, in our lab 4 case, students are tasked with building out their own header files to enable such control. This practice aims to develop the skills needed to parse and implement the 1600 page reference manual, hopefully making future projects easier to understand and implement with or without the aid of tools like CMSIS.
+
+## The Hardware
+
+The circuit for this lab was simple – connect an 8 Ohm speaker to the MCU through an audio amplifier stage. We selected the LM386, a common low-power IC often used for audio applications. We were able to hook up this circuit directly as shown by the example application circuit in the datasheet. Our resulting circuit may be seen in @fig-schematic below.
+
+::: {#fig-schematic}
+![](images/)
+
+Schematic
+:::
+
+## Steps to Enable Sound Output
+
+I knew that my ultimate goal was to build a PWM generator capable of producing a desired frequency. Changing this frequency would allow me to produce any tone, or note, I wanted. I also needed a way to precisely control when this PWM triggered and changed frequency. Changing this delay would allow me to control the cadence of the music. Luckily, both of these can be accomplished with the same fundamental unit in an MCU – timers! With this in mind, I created the following task list of big picture action items:
+
+1. Establish a known system clock.
+2. Enable clock output to peripheral timers
+3. Set a timer for PWM
+4. Set a timer for controlled delay
+5. Enable output pin for PWM alternate functionaltiy
+
+My block diagram for this lab presents itself in a less obvious form, but it more clearly outlines the steps that I must go through in order to accomplish the steps above. Starting with Figure 13 (Clock Tree, from page 180 of the reference manual) as a base, I developed the following block diagram to describe how I would accomplish steps 1 and 2 above. I chose to enable the PLL, using the MSI as a source, as highlighted in Blue. I then set the system clock source to PLL, as shown in Purple. Finally, I could feed these clock signals to the peripheral timers, as shown in Red.
+
+::: {#fig-}
+![](images/clockBlock.jpeg)
+
+Clock Source Block Diagram
+:::
+
+Note that I did not leave my choice of where to run the Red timer connections up to chance. I chose timers 2 and 6 to generate my frequency and delay because they had the requisite functionality and could be enabled by the same clock signal. I chose timer 6, one of the most basic timers available on our MCU, as a delay timer. This made sense, because it would serve as a low-stakes introduction to using timers and because its only function was to count and delay the system – a basic function indeed. I chose timer 2 to generate my frequency output because it's a general purpose timer with a PWM function built in.
+
+
+
+## Getting Specific
+

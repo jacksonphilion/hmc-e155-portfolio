@@ -1,0 +1,17 @@
+---
+title: "My New Hack for Debugging"
+description: "A new technique that I'm trying to great success"
+author: "Jackson Philion"
+date: "10/18/24"
+categories:
+  - reflection
+draft: false
+---
+
+![](images/24_10_18/errorSegger.png){width=50%}
+
+With Lab 4 bringing about a switch in focus to our other hardware unit – the Microcontroller Unit (MCU) – I've been running into bugs that are unfamiliar. More than that, some of the error messages are downright unhelpful. I've grown quite fond of SystemVerilog and the associated messages. They give you a line number that is normally a couple off, sure, and the error message isn't always spot on, but they get the job done. I feel (almost) completely in control of those errors, and know almost instantly when one is going to require special attention.
+
+Now, in the land of the MCU, I feel a bit lost with each new error message. Think of each debugging journey like a scavenger hunt. A SystemVerilog scavenger hunt feels like finding a spot the difference puzzle in the third drawer of the old hutch in the attic. It's a bit challenging to locate, and the solution is often satisfying and apparent upon discovery. In a C scavenger hunt, on the other hand, the first clue you get is to find 'something round' in a forest of identical trees, and the second clue is written in invisible ink on the back of a squirrel.
+
+Now, in all fairness, give me a couple of weeks and I'm sure I'll be able to tell you which squirrel to look for. However, the learning curve has proved to be steep. I look forward to the day when I feel just the same about the MCU errors, because I'm realizing just how powerful an MCU can be (and how potentially easy too!) when used correctly.

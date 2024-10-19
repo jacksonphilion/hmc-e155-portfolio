@@ -5,7 +5,6 @@ author: "Jackson Philion"
 date: "10/10/24"
 categories:
   - reflection
-  - labreport
 draft: false
 ---
 

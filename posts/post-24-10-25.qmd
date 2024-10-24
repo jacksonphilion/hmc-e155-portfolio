@@ -1,0 +1,10 @@
+---
+title: "Lab 4 Reflection, and a Foray Into AI "
+description: "A glimpse inside my first week trying to work smarter"
+author: "Jackson Philion"
+date: "10/18/24"
+categories:
+  - reflection
+draft: true
+---
+

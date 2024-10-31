@@ -69,7 +69,7 @@ Flowchart describing main loop and interrupt code behavior
 Finally, attaching this system to our MCU is straightforward. We are given a 25GA-370 DC motor, with the datasheet our class references available [here](https://hmc-e155.github.io/assets/lab/25GA370.pdf). It requires a DC voltage supply between 0 and 12V, which I provided from a benchtop power supply (as seen in the system demo video above). I chose to attach the A encoder and B encoder signals to GPIO A and B ports respectively, making the code easy to parse. The simple schematic may be seen in @fig-schematic below.
 
 ::: {#fig-schematic}
-![](images/screenshot.png)
+![](images/schematic.png)
 
 Hardware schematic – note that VoltageSupply + and - refer to an external benchtop connection. DC Motor Used: [25GA-370](https://hmc-e155.github.io/assets/lab/25GA370.pdf)
 :::

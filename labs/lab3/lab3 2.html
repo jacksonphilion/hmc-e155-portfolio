@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 3 – E155 Portfolio</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">E155 Portfolio</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-labs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Labs</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-labs">    
+        <li>
+    <a class="dropdown-item" href="../../labs/lab1/lab1.html">
+ <span class="dropdown-text">Lab 1 - FPGA &amp; MCU Setup &amp; Testing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab2/lab2.html">
+ <span class="dropdown-text">Lab 2 - Multiplexed 7-Segment Display</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab3/lab3.html">
+ <span class="dropdown-text">Lab 3 - Keypad Scanner</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab4/lab4.html">
+ <span class="dropdown-text">Lab 4 - Digital Audio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab5/lab5.html">
+ <span class="dropdown-text">Lab 5 - Interrupts</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab6/lab6.html">
+ <span class="dropdown-text">Lab 6 - IoT &amp; SPI</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab7/lab7.html">
+ <span class="dropdown-text">Lab 7 - Advanced Encryption Standard</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.github.com/jacksonphilion"> 
+<span class="menu-text">Github</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lab-3-keypad-scanner" id="toc-lab-3-keypad-scanner" class="nav-link active" data-scroll-target="#lab-3-keypad-scanner">Lab 3: Keypad Scanner</a>
+  <ul class="collapse">
+  <li><a href="#lab-task-out-with-the-switches-in-with-the-keypad" id="toc-lab-task-out-with-the-switches-in-with-the-keypad" class="nav-link" data-scroll-target="#lab-task-out-with-the-switches-in-with-the-keypad">Lab Task: Out with the Switches, In with the Keypad</a></li>
+  <li><a href="#understanding-the-hardware" id="toc-understanding-the-hardware" class="nav-link" data-scroll-target="#understanding-the-hardware">Understanding the Hardware</a></li>
+  <li><a href="#dealing-with-bounce" id="toc-dealing-with-bounce" class="nav-link" data-scroll-target="#dealing-with-bounce">Dealing with Bounce</a></li>
+  <li><a href="#system-design" id="toc-system-design" class="nav-link" data-scroll-target="#system-design">System Design</a></li>
+  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation">Simulation</a></li>
+  <li><a href="#synchronizing-the-inputs" id="toc-synchronizing-the-inputs" class="nav-link" data-scroll-target="#synchronizing-the-inputs">Synchronizing the Inputs</a></li>
+  <li><a href="#final-system-and-conclusion" id="toc-final-system-and-conclusion" class="nav-link" data-scroll-target="#final-system-and-conclusion">Final System and Conclusion</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 3</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Quick Stats</strong><br>
+Time Spent: 21 Hours, 45 Minutes, 57 Seconds<br>
+SystemVerilog Modules: 10<br>
+Total FSM States Created: 16<br>
+Testbenches: 5<br>
+Time Wasted on a Busted Keyboard: 1 hour 13 minutes<br>
+Mind Melting Bugs: 2<br>
+Buttons Mashed for Testing Purposes: a lot<br>
+Overall: Success<br>
+</p>
+<p>See my Blog Reflection for more!</p>
+<section id="lab-3-keypad-scanner" class="level1">
+<h1>Lab 3: Keypad Scanner</h1>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/uw_GiBIc0iA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="lab-task-out-with-the-switches-in-with-the-keypad" class="level2">
+<h2 class="anchored" data-anchor-id="lab-task-out-with-the-switches-in-with-the-keypad">Lab Task: Out with the Switches, In with the Keypad</h2>
+<p>Recall that in Lab 1, students used their FPGA to control a seven segment display. Lab 2 added an additional layer of complexity, asking students to double the inputs and double the displays <em>without</em> doubling the hardware and GPIO burden.</p>
+<p>Lab 3 gives students a straightforward task. Maintaining the dual display system, swap out the 8 switch inputs for an 8-pin, 16 button keypad. With the goal in mind, let’s dive right in!</p>
+</section>
+<section id="understanding-the-hardware" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-the-hardware">Understanding the Hardware</h2>
+<div id="fig-keypad" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-keypad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/keypad.jpeg" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-keypad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Keypad
+</figcaption>
+</figure>
+</div>
+<p>The keypad took me some tinkering to understand fully. Pictured above, it has 8 pin outputs, labeled 1 to 8 from left to right. The pins create a 4x4 matrix, where each node represents a switch. Pressing a particular button connects that node’s column line to that node’s row line. In this way, each of the 16 buttons may be represented by a unique connection between one row line and one column line. By using a multimeter to reveal continuity, I created the following scratch note sheet for myself, describing the connections that each button makes between each pin. Note that the layout in <a href="#fig-keypad-notesheet" class="quarto-xref">Figure&nbsp;2</a> below matches the orientation of the buttons in <a href="#fig-keypad" class="quarto-xref">Figure&nbsp;1</a> above.</p>
+<div id="fig-keypad-notesheet" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-keypad-notesheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/keypadSchematic.jpeg" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-keypad-notesheet-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Keypad Note Sheet
+</figcaption>
+</figure>
+</div>
+<p>So, the question then becomes – how does one detect these pin connections as they happen? Consider if you set all of the column pins to a logical high, and left the row pins logical low. Pressing one button, say the number 1, would connect the Row 0 and Column 0 lines together. Thus, the logical high value could pass from the column pin 3 to the row pin 8, where it could be read out as an input. However, how would you know which button in the row was pressed? You would have no way to determine whether the connection was made by the 1, 2, 3, or A button, any of which would connect a logical high column to Row 0. Instead, one could imagine setting all of the row and column pins to low. By setting only one column pin high at a time, you allow the input row pins to determine which button is being pressed. If Row 1 reads in a logical high while only Column 2 is similarly high? The user must be pressing a 6. If the user holds down this 6, the row pin should only register an input every time the high column pin cycles back around. By scanning through each column in sequence, we can thus read out all 16 buttons on the keypad. <a href="#fig-keypad-matrix" class="quarto-xref">Figure&nbsp;3</a> below shows some of this in more detail, diagram-style.</p>
+<div id="fig-keypad-matrix" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-keypad-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/keypadMatrix.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-keypad-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Keypad matrix diagram and the basics of column scanning
+</figcaption>
+</figure>
+</div>
+<p>One might note that <a href="#fig-keypad-matrix" class="quarto-xref">Figure&nbsp;3</a> seems to show the columns scanning through a single logical low bit, rather than a logical high. Knowing that the FPGA pins have internal pullup resistors, I opted to switch the polarity of the logic. I opted to keep all of the keypad columns logical high, and scan through with a single logical low value. I could then read any logical low row pins as an input button pressed. I made sure I had a reset set up, reused the same display multiplexing schematic from Lab 2, and wired up my keypad to the same pins the switches used to occupy. I kept the LEDs in use on the E155 protoboard, using them as a debugging tool. <a href="#fig-schematic" class="quarto-xref">Figure&nbsp;4</a> below shows the schematic, which may be viewed in more detail under the notes and extras folder in my Github.</p>
+<div id="fig-schematic" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/schematic.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Hardware Schematic
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="dealing-with-bounce" class="level2">
+<h2 class="anchored" data-anchor-id="dealing-with-bounce">Dealing with Bounce</h2>
+<p>One key flaw in most any physical button or switch hardware is its tendency to bounce. Bounce is when a connection is made and broken multiple times over a very short timespan, often occurring when a connection is first made or first released. Taking our buttons, for example, they have a springing mechanism which keeps them open. When they are depressed, they make a satisfying <em>click</em>. This is the physical deformation of the button, going from one relaxed “on” state to a similarly relaxed “off” state. The stage in the middle is unstable, and forces act to drive it either fully open or fully closed. These forces, coupled with the spring mechanism and rigid nature of the button, cause this bounce phenomenon as a button snaps and unevenly settles between states.</p>
+<p>Software designers need to have an understanding of debounce techniques in order to code robust software which is capable of ignoring bounce. For example, you wouldn’t want 10 “b” letters logged in the span of a microsecond. It is safe to assume that those repeated loggings were due to bounce, and should represent only one button press. On the other hand, maybe two or three button presses in a second are possible, and must register as distinct inputs. To find the difference between a bouncing input and a steady, true input, I decided to use a counter system. When enabled, this counter system initially gains some middle value. As the clock cycles, every time the input matches a true button press, the counter ticks up. If the button indicates a false input, or a still bouncing button, the counter ticks down. The counter module reads out a result if its value reaches either the upper bounded top rail, or the lower bounded bottom rail, indicating either a true input or a false input respectively. <a href="#fig-counter-fsms" class="quarto-xref">Figure&nbsp;8</a> in the System Design section below shows the diagram of this system.</p>
+<p>This would not be the only way to account for debouncing. One other way to avoid logging false inputs would be to slow the whole system down, making each clock cycle significantly longer than the time a button would take to bounce. However, I did not like this option. First off, the counter system gives me an easy knob to tune – the value at which the counter starts, and the value of the top rail. By adjusting these values, I can test my hardware to find the right balance between delay and speed without affecting the rest of my system. If I were to implement a slow clock system to account for bounce, my adjustment parameter then affects the entire system. This is undesireable. Additionally, I was worried about imperfect and rocking buttons momentarily disconnecting the input button as it was held down, causing an additional form of bounce and reconnection that would register as an additional press. I feared that this slow clock system would be more liable to register such an intermediate bounce as a new button click, since it had less data to use as a reference.</p>
+<p>Another way to address bounce would be to wait a fixed time before reading in the input again. This gives the designer control over a similarly easy-to-tune parameter, and mimics the method often used in many DIP push button MCU systems. In my case, however, I again felt that collecting and comparing more data was better than comparing less data. By sampling the signal multiple times with my counter, I make sure that I am not beholden to any single cycle of bouncing.</p>
+</section>
+<section id="system-design" class="level2">
+<h2 class="anchored" data-anchor-id="system-design">System Design</h2>
+<p>In this lab, the challenge is implementing this system into hardware. In order to describe how information is stored and passed, I created a Moore Finite State Machine (FSM). The FSM diagram in <a href="#fig-scanFSM" class="quarto-xref">Figure&nbsp;5</a> below illustrates my scanning system, polling through each column of the keypad. Note the general stage titles of the system on the left. This scanning through the columns is the core of the system, in scanColsX. The addition of synchronizers on the input necessitate the addition of two boot states to delay the system. If a valid input is read in, the system kicks over into the verification stage, where the goal is to make sure that the signal is one valid button pressed. This stage attempts to account for button debounce, which is discussed later in this lab. If the input is valid, the system then moves into the Set and Hold stage, where the input is sent out to the seven segment display and the system is placed into a holding state until all buttons are unpressed.</p>
+<div id="fig-scanFSM" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scanFSM-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/scanFSM.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scanFSM-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Moore state diagram for scanFSM module
+</figcaption>
+</figure>
+</div>
+<p>Translating this into clear and specific inputs and outputs, the state transition table in <a href="#fig-state-table" class="quarto-xref">Figure&nbsp;7</a> below describes the specifics of the system. <a href="#fig-inputs" class="quarto-xref">Figure&nbsp;6</a> describes the inputs with some simple matrices and describes each of the variables in the table.</p>
+<div id="fig-inputs" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-inputs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/inputsAndVariables.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-inputs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Input tables, &amp; variables used in my FSM, state transition table, and actual SystemVerilog code
+</figcaption>
+</figure>
+</div>
+<div id="fig-state-table" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-state-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/stateTransitionTable.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-state-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: State transition table for scanFSM module
+</figcaption>
+</figure>
+</div>
+<p>Additionally, I wanted to flesh out the counter modules, since they would need simple FSMs of their own. Since they are relatively similar, <a href="#fig-counter-fsms" class="quarto-xref">Figure&nbsp;8</a> describes both modules by the same general diagram.</p>
+<div id="fig-counter-fsms" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-counter-fsms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/counterFSMs.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-counter-fsms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: FSM diagrams for ensureCounter and holdCounter modules
+</figcaption>
+</figure>
+</div>
+<p>Finally, I needed to sketch out how each module connects using a block diagram. Note that this block diagram isn’t nearly as neat as I would normally prefer – however, in this lab, the real meat and potatoes is in the FSM diagrams. The block diagram in <a href="#fig-block-diagram" class="quarto-xref">Figure&nbsp;9</a> below merely serves to show how the wires connect in SystemVerilog. Note that int_osc and clk signals are different, accounting for the fact that the display multiplexer runs at a different frequency than the keypad scanner. Funnily enough, in the end, I ended up using the same value of 1000Hz for both. Therefore, I could have cut down the extra frequency generator inside the display module.</p>
+<div id="fig-block-diagram" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-block-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/blockDiagram.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-block-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Block diagram
+</figcaption>
+</figure>
+</div>
+<p>Having designed the system, it was time to put it into SystemVerilog! The full contents may be found in the FPGA folder of my lab 3 Github repository, found <a href="https://github.com/jacksonphilion/e155_lab3">here</a>. Note that there are two main branches, corresponding to my code before synchronizers and after synchronizers.</p>
+</section>
+<section id="simulation" class="level2">
+<h2 class="anchored" data-anchor-id="simulation">Simulation</h2>
+<p>Simulating this lab was a doozy, but essential to the lab’s success. Without simulation, it would have been near impossible to tell what was happening in my hardware. An oscilloscope helped me see the scanning of the columns, which coupled nicely with my onboard indicator LEDs and a reduced 1Hz clk signal to give me a debugging suite. My simulations all went off nearly without a hitch – I mainly spent my time fixing small syntax errors. The design work beforehand paid off!</p>
+<p>Starting with the simplest module, I tested the keypad decoder module in <a href="#fig-keypad-decoder-testbench" class="quarto-xref">Figure&nbsp;10</a> to verify that for a given column and row input, it outputs the correct hex input digit.</p>
+<div id="fig-keypad-decoder-testbench" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-keypad-decoder-testbench-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/keypadTestbench.JPG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-keypad-decoder-testbench-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Testbench for the keypad decoder module – Successful
+</figcaption>
+</figure>
+</div>
+<p>Moving onto the ensureCounter module, I verified that it cycled through states properly, activated its top and bottom rails as necessary, and counted as desired. It performed smoothly!</p>
+<div id="fig-ensure-counter-testbench" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ensure-counter-testbench-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ensureCounterTestbench.JPG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ensure-counter-testbench-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: Testbench for the ensureCounter module – Successful
+</figcaption>
+</figure>
+</div>
+<p>Moving now to the bigger beast, scanFSM, I loaded it up and was surprised to see that it too simulated after only a few small syntax or inversion errors. Note that this does not yet include the synchronizers. Specifically, referring to <a href="#fig-scanFSM-testbench" class="quarto-xref">Figure&nbsp;12</a>, I checked to make sure the states cycled as expected, the correct row and column were held at the proper time, the intended digit was read out into the display input, and that it integrated with the counters to verify any button presses.</p>
+<div id="fig-scanFSM-testbench" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-scanFSM-testbench-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/scanFSMWaveforms.JPG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scanFSM-testbench-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Testbench for the scanFSM module – Successful
+</figcaption>
+</figure>
+</div>
+<p>Putting this into hardware, it worked! I had some issues at first with a prolonged button press with several intermediate presses registering as multiple presses of the first button. Changing my default case in the pinReader module fixed this issue. Additionally, I had some issues with my state register when I synthesized it with Lattice Radiant and uploaded it to my FPGA. Strangely, the software did not warn me and I was stuck for quite some time. After more clearly defining all of my defaults, the system worked. I predict that the synthesizer was recognizing my creation of an FSM and attempting to optimize the state encoding and logic – unfortunately, this caused some of my default cases not to apply as they should have. After speaking with Professor Brake, he hinted that this may just be an unfortunate quirk of the software.</p>
+</section>
+<section id="synchronizing-the-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="synchronizing-the-inputs">Synchronizing the Inputs</h2>
+<p>Finally, the trickiest excellence specification for the week asked students to add in synchronizers to their inputs. A synchronizer is a mechanism to avoid metastability in a synchronous system with asynchronous inputs. In our case, all of our keypad presses were asynchronous inputs, and reading them on a clock edge as they changed could put our synchronous logic into a dangerous middling state, where the logic recognizes it as neither high nor low. This can propagate and ruin systems, or at the very least, cause some incorrect bits when it does occur. However, most metastable inputs settle over time. The goal of a synchronizer is to increase this settling time on the input before introducing it into your system. By stringing the input signal along between, say, two flip flops, you can give the input signal two additional clock cycles of time to settle to a logical low or logical high. So, that’s exactly what I did!</p>
+<p>However, introducing synchronizers adds an additional layer of complexity to the system. As <a href="#fig-synchronizer-problem" class="quarto-xref">Figure&nbsp;13</a> illustrates, these synchronizers delay the inputs into my system. As I scan along the columns, there is now an introduced two cycle delay between when my input reads out and when my FSM registers it. Referring to <a href="#fig-scanFSM" class="quarto-xref">Figure&nbsp;5</a>, one can see that an input read into scanCol1 would not register until the system had moved onto scanCol3. That is to say, the delay mismatches the “scan” value at any given time with the “scan” value which correlates to the currently read input. In order to solve this, I added in two registers which store the two most recent prior values of scan. Thus, by referencing back to the value twoPriorScan, I can properly match the delayed input sense with the delayed output scan.</p>
+<div id="fig-synchronizer-problem" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-synchronizer-problem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/syncProblem.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-synchronizer-problem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: The problem with synchronizers in my system, illustrated with waveform inputs
+</figcaption>
+</figure>
+</div>
+<p>However, this in and of itself is not enough. The FSM in <a href="#fig-scanFSM" class="quarto-xref">Figure&nbsp;5</a> thus needs two cycles to load in the most recent input and output values. So, I gave the system two extra cycles to boot and store new information before it drops into its regular scanning cycle. Likely, I did not need these additional stages. I may have gotten away just fine by letting it loop back, and building in more conditions into how the system moved into the initialize stage. However, I found it simpler and easier to understand if I instead added two boot delay states.</p>
+<p>As I coded these synchronizers into SystemVerilog, I again wrote some simple testbenches. The first one, in <a href="#fig-sync-pin-testbench" class="quarto-xref">Figure&nbsp;14</a> below, shows the intended two cycle delay and polarity flipping on the new pinReader module.</p>
+<div id="fig-sync-pin-testbench" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sync-pin-testbench-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/syncPinTestbench.JPG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sync-pin-testbench-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Testbench for the pinReaderSynchronized module – Successful
+</figcaption>
+</figure>
+</div>
+<p>Finally, <a href="#fig-sync-top-testbench" class="quarto-xref">Figure&nbsp;15</a> shows a successful run of the top module with all synchronizer code built in.</p>
+<div id="fig-sync-top-testbench" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sync-top-testbench-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/syncTopTestbench.JPG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sync-top-testbench-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;15: Testbench for the synchronized top module – Successful
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="final-system-and-conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="final-system-and-conclusion">Final System and Conclusion</h2>
+<div id="fig-system-preview" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-system-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/fullSystem.jpeg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-system-preview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;16: System Preview
+</figcaption>
+</figure>
+</div>
+<p>And with that, I had my final system! My blog post for Lab 3 contains more details about the second mysterious bug that I encountered, and my feelings on the matter. This lab wasn’t as frustrating as I think it was for some – although I encountered my share of confusion, I always felt like I had a clear path forward. My final system is incredibly robust, successfully able to avoid many forms of multiple-button presses while responding to valid inputs in a snap. I wish that I could have been better able to deal with two simultaneous button presses in adjacent columns. In fact, I am surprised that the system seems to handle it as well as it does. I’m not exactly sure what causes it to ignore simultaneous adjacent column presses. However, I did successfully add synchronizers, avoid logging interstitial short presses over longer simultaneous presses, and ignore simultaneous presses along different rows. I’m proud of my work in this lab, although I recognize that there is room for improvement, both in terms of functionality and FPGA efficiency.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/jacksonphilion\.github\.io\/hmc-e155-portfolio\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

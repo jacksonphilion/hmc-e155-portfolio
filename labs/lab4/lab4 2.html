@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lab 4 – E155 Portfolio</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">E155 Portfolio</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-labs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Labs</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-labs">    
+        <li>
+    <a class="dropdown-item" href="../../labs/lab1/lab1.html">
+ <span class="dropdown-text">Lab 1 - FPGA &amp; MCU Setup &amp; Testing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab2/lab2.html">
+ <span class="dropdown-text">Lab 2 - Multiplexed 7-Segment Display</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab3/lab3.html">
+ <span class="dropdown-text">Lab 3 - Keypad Scanner</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab4/lab4.html">
+ <span class="dropdown-text">Lab 4 - Digital Audio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab5/lab5.html">
+ <span class="dropdown-text">Lab 5 - Interrupts</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab6/lab6.html">
+ <span class="dropdown-text">Lab 6 - IoT &amp; SPI</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../labs/lab7/lab7.html">
+ <span class="dropdown-text">Lab 7 - Advanced Encryption Standard</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources.html"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.github.com/jacksonphilion"> 
+<span class="menu-text">Github</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lab-4-digital-audio" id="toc-lab-4-digital-audio" class="nav-link active" data-scroll-target="#lab-4-digital-audio">Lab 4: Digital Audio</a></li>
+  <li><a href="#lab-task-intro-to-mcu-and-writing-effective-headers" id="toc-lab-task-intro-to-mcu-and-writing-effective-headers" class="nav-link" data-scroll-target="#lab-task-intro-to-mcu-and-writing-effective-headers">Lab Task: Intro to MCU and Writing Effective Headers</a></li>
+  <li><a href="#the-hardware" id="toc-the-hardware" class="nav-link" data-scroll-target="#the-hardware">The Hardware</a></li>
+  <li><a href="#steps-to-enable-sound-output" id="toc-steps-to-enable-sound-output" class="nav-link" data-scroll-target="#steps-to-enable-sound-output">Steps to Enable Sound Output</a>
+  <ul class="collapse">
+  <li><a href="#steps-1-and-2-clock-control" id="toc-steps-1-and-2-clock-control" class="nav-link" data-scroll-target="#steps-1-and-2-clock-control">Steps 1 and 2 – Clock Control</a></li>
+  <li><a href="#steps-3-and-4-timer-control" id="toc-steps-3-and-4-timer-control" class="nav-link" data-scroll-target="#steps-3-and-4-timer-control">Steps 3 and 4 – Timer Control</a></li>
+  <li><a href="#step-5-output-pin-control" id="toc-step-5-output-pin-control" class="nav-link" data-scroll-target="#step-5-output-pin-control">Step 5 – Output Pin Control</a></li>
+  </ul></li>
+  <li><a href="#supporting-calculations" id="toc-supporting-calculations" class="nav-link" data-scroll-target="#supporting-calculations">Supporting Calculations</a></li>
+  <li><a href="#delay-limits-calculations" id="toc-delay-limits-calculations" class="nav-link" data-scroll-target="#delay-limits-calculations">Delay Limits Calculations</a></li>
+  <li><a href="#frequency-limits-calculations" id="toc-frequency-limits-calculations" class="nav-link" data-scroll-target="#frequency-limits-calculations">Frequency Limits Calculations</a></li>
+  <li><a href="#pwm-frequency-accuracy" id="toc-pwm-frequency-accuracy" class="nav-link" data-scroll-target="#pwm-frequency-accuracy">PWM Frequency Accuracy</a></li>
+  <li><a href="#delay-accuracy" id="toc-delay-accuracy" class="nav-link" data-scroll-target="#delay-accuracy">Delay Accuracy</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 4</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Quick Stats</strong><br>
+Time Spent: 16 Hours, 11 minutes and 51 seconds<br>
+Timers Initialized: 2<br>
+Failed Imperial Marches: 1<br>
+Blown LM386 Amplifiers: 0.5<br>
+How Helpful the Oscilloscope Was: Very<br>
+Debugger: Thoroughly Stepped<br>
+E85 Lab-goers Annoyed: 4<br>
+E85 Lab-goers Impressed: 0<br>
+E155 Classmates Impressed: 1<br>
+Overall: Success<br>
+</p>
+<p>See my Blog Reflection for more!</p>
+<section id="lab-4-digital-audio" class="level2">
+<h2 class="anchored" data-anchor-id="lab-4-digital-audio">Lab 4: Digital Audio</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/C9rHem4BoUI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/KQplLrrBuUg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="lab-task-intro-to-mcu-and-writing-effective-headers" class="level2">
+<h2 class="anchored" data-anchor-id="lab-task-intro-to-mcu-and-writing-effective-headers">Lab Task: Intro to MCU and Writing Effective Headers</h2>
+<p>Lab 4 tasks students with creating a digital audio system capable of playing a simple tone-based song. Enabled by the MCU for the first time, rather than the FPGA, this lab has an added challenge. Typically, a STM32 programmer would use CMSIS, a standardized framework built for helping users implement MCU functions easily and consistently. Instead, in our lab 4 case, students are tasked with building out their own header files to enable such control. This practice aims to develop the skills needed to parse and implement the 1600 page <a href="https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">reference manual</a>, hopefully making future projects easier to understand and implement with or without the aid of tools like CMSIS.</p>
+<p>Note: I need to thank and credit Professor Joshua Brake for providing the Lab 4 starter code <a href="https://github.com/HMC-E155/hmc-e155/tree/main/lab/lab04">here</a>, which lists the C array which encodes the frequencies and delays for Für Elise, and the RCC Configuration tutorial <a href="https://github.com/HMC-E155/tutorial-clock-configuration">here</a>. The latter tutorial was partially completed during a lecture day, and includes the unmodified .c and .h FLASH files which ensure that code can still be downloaded. It also contains the GPIO files, which I modified to include both port A and port B, and the RCC tutorial itself, which gives a framework for students to enable the PLL.</p>
+</section>
+<section id="the-hardware" class="level2">
+<h2 class="anchored" data-anchor-id="the-hardware">The Hardware</h2>
+<p>The circuit for this lab was simple – connect an 8 Ohm speaker to the MCU through an audio amplifier stage. We selected the <a href="https://www.ti.com/lit/ds/symlink/lm386.pdf">LM386</a>, a common low-power IC often used for audio applications. We were able to hook up this circuit directly as shown by the example application circuit in the data sheet. Our resulting circuit may be seen in <a href="#fig-schematic" class="quarto-xref">Figure&nbsp;1</a> below. Note that I ended up removing the final capacitor that ran in series with the speaker, as it seemed to be cutting off the upper end of my frequency spectrum. Everything sounded extra low and down-shifted.</p>
+<div id="fig-schematic" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/schematic.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-schematic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Schematic
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="steps-to-enable-sound-output" class="level2">
+<h2 class="anchored" data-anchor-id="steps-to-enable-sound-output">Steps to Enable Sound Output</h2>
+<p>I knew that my ultimate goal was to build a PWM generator capable of producing a desired frequency. Changing this frequency would allow me to produce any tone, or note, I wanted. I also needed a way to precisely control when this PWM triggered and changed frequency. Changing this delay would allow me to control the cadence of the music. Luckily, both of these can be accomplished with the same fundamental unit in an MCU –&nbsp;timers! With this in mind, I created the following task list of big picture action items:</p>
+<ol type="1">
+<li>Establish a known system clock.</li>
+<li>Enable clock output to peripheral timers</li>
+<li>Set a timer for controlled delay</li>
+<li>Set a timer for PWM</li>
+<li>Enable output pin for PWM alternate functionality</li>
+</ol>
+<p>Note: For the most thorough description of which Registers to use and Bits to change, see my code, found in my github <a href="https://github.com/jacksonphilion/e155_lab4">here</a>.</p>
+<section id="steps-1-and-2-clock-control" class="level3">
+<h3 class="anchored" data-anchor-id="steps-1-and-2-clock-control">Steps 1 and 2 – Clock Control</h3>
+<p>My block diagram for this lab presents itself in a less obvious form, but it more clearly outlines the steps that I must go through in order to accomplish the steps above. Starting with Figure 13 (Clock Tree, from page 180 of the <a href="https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">reference manual</a>) as a base, I developed the quasi - block diagram in <a href="#fig-clock-block" class="quarto-xref">Figure&nbsp;2</a> to describe how I would accomplish steps 1 and 2 above. I chose to enable the PLL, using the MSI as a source, as highlighted in Blue. I then set the system clock source to PLL, as shown in Purple. Finally, I could feed these clock signals to the peripheral timers, as shown in Red.</p>
+<div id="fig-clock-block" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-clock-block-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/clockBlock.jpeg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-clock-block-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Clock Source Block Diagram
+</figcaption>
+</figure>
+</div>
+<p>Note that I did not leave my choice of where to run the Red timer connections up to chance. I chose timers 2 and 6 to generate my frequency and delay because they had the requisite functionality and could be enabled by the same clock signal. I chose timer 6, one of the most basic timers available on our MCU, as a delay timer. I felt that it would serve as a low-stakes introduction to using timers, helping me build up the skills for enabling the PWM on a separate timer. After all, its only function in my system is to count up a precise delay – a basic function indeed. I chose timer 2 to generate my frequency output because it’s a general purpose timer with a PWM function built in.</p>
+<p>Finally, I want to note the <code>x1 or x2</code> block along the red line, right before the signal feeds out to the timers. Originally, I did not know how to set this. I have since come to learn that this value is set to x1 automatically if both bus prescalers are equal to 1, and the value is set to x2 in any other case. Since I chose to divide by 2 with both the AHB and APB1 scalers, this block was set to x2. This gave me a final SYS_CLK = 10 MHz, and a TIMER_CLK = 5 MHz.</p>
+</section>
+<section id="steps-3-and-4-timer-control" class="level3">
+<h3 class="anchored" data-anchor-id="steps-3-and-4-timer-control">Steps 3 and 4 – Timer Control</h3>
+<p>To describe the steps required to enable Timer 2, I used Figure 325 in the STM32 <a href="https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">reference manual</a> as a base. Tracing the required signal path to generate a delay, I produced the quasi - block diagram shown in <a href="#fig-tim-6-block" class="quarto-xref">Figure&nbsp;3</a> below. This one was relatively straightforward. The key steps to remember are enabling the control unit after setting the desired prescale and auto-reload values.</p>
+<div id="fig-tim-6-block" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tim-6-block-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/tim6block.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tim-6-block-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Timer 6 Block Diagram
+</figcaption>
+</figure>
+</div>
+<p>To understand more about how the timer works, I used Figure 328 in the STM32 <a href="https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">reference manual</a>, shown in <a href="#fig-tim6-ref" class="quarto-xref">Figure&nbsp;4</a> below. I thought about the timer like this: once enabled, the timer counts up. It stores its current count value in the Counter Register. This counting occurs at a rate determined by the counter clock, which is equal to the Internal Clock divided by the Clock Prescaler. The Counter Register continues counting up until it is equal to the Auto Reload Register (not pictured, but can be set by the user).</p>
+<div id="fig-tim6-ref" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tim6-ref-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/fig328STM32reference.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tim6-ref-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Timer 6 Timing Diagram
+</figcaption>
+</figure>
+</div>
+<p>We set the system clock speed such that it is 5 MHz by the time it reaches the timers. We know and can control the prescaler – I set it to 1, essentially meaning that this 5 MHz system clock passes straight through to the counter. So, the counter counts up at a frequency of 5 MHz. In other words, it will count up to 5 million in a full second. That would be useful if I wanted to count seconds, or if the counter register was big enough to store that big a number. However, neither of these are true. So, that’s why we control the Auto Reload Register – it tells the counter when to restart from 0. By carefully choosing the value we put in the Auto Reload Register, we can tell the timer to count up in millisecond increments, microsecond increments, or anything between. For example, if we set it to 1,000, then the counter would count a total of 5 thousand times, instead of 5 million.</p>
+<p>I set my timer so that a single cycle of counting takes 1 millisecond. How does one use this to create a useful delay function? In order to interface the software with the counting hardware, we first need to understand what the software can see. When the timer reaches its maximum, it creates an update event. Listed in the diagram below as (UEV), this is how the hardware signals itself to reset from 0 and continue counting. Once the counting starts again, the hardware automatically resets the UEV bit. So, a user who wanted to use this timer to count up to 10 milliseconds could wait for 10 of these events to generate. However, this requires a strict timing – so, we have a better solution. The UEV bit also sets the UIF bit –&nbsp;Update Interrupt Flag. This flag turns on every time the counter reaches its maximum, and stays on until turned off by software. Turning it on or off does not affect the counting itself. So, by instead tracking this UIF bit, we can make sure that we don’t miss a counting cycle.</p>
+<p>With this understanding, generating a PWM signal is rather straightforward. Timer 2 has a built in compare function, which outputs 0 if counter is less than the compare number and 1 if the counter is greater than the compare number. If you set the compare number to be half of the Auto Reload Register, then the timer will output a square wave, going from 0 to 1 midway through a single timer cycle. So, you can generate a desired PWM wave by storing select values in the Auto Reload Register (the top value), the Capture/Compare Register (the middle value), and the Prescaler Register (which sets the counter frequency, like TIM6).</p>
+<div id="fig-tim2-stm" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tim2-stm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/tim2block.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tim2-stm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Timer 2 Block Diagram
+</figcaption>
+</figure>
+</div>
+<p>However, although the idea behind generating a PWM is rather simple, timer 2 is far more complex and requires special attention in its block diagram. Specifically, there are 4 channels, and additional stages of control (ex. output control, capture/compare control). If any of these values is incorrectly set, say for the wrong channel to to the wrong value, the entire chain breaks down. <a href="#fig-tim2-stm" class="quarto-xref">Figure&nbsp;5</a> above shows the block diagram path of the signal, highlighting the values that must be updated. In addition, the <a href="https://hmc-e155.github.io/assets/doc/rm0394-stm32l41xxx42xxx43xxx44xxx45xxx46xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf">reference manual</a> contains a section describing which values need to be set to enable PWM output.</p>
+</section>
+<section id="step-5-output-pin-control" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-output-pin-control">Step 5 – Output Pin Control</h3>
+<p>Great! We have a way to control a precise delay, and can generate a PWM wave. Except right now, that wave signal is stuck on an internal timer – we need to get it out to a pin so we can interface it with the world. So, we need to follow another path through to an output pin. Most of these pins have alternate functions, allowing them to be connected to some internal system like our timer 2. To understand this signal path, we may look to the quasi - block diagram in <a href="#fig-pin-block" class="quarto-xref">Figure&nbsp;6</a> below. For understanding more about the software control and interconnects between systems, the table describing these internal connections may be found in the STM32 <a href="https://hmc-e155.github.io/assets/doc/ds11451-stm32l432kc.pdf">data sheet</a> (page 55, Table 15).</p>
+<div id="fig-pin-block" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pin-block-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/outputPinBlock.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pin-block-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Pin Block Diagram
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="supporting-calculations" class="level2">
+<h2 class="anchored" data-anchor-id="supporting-calculations">Supporting Calculations</h2>
+<p>This section contains the supporting calculations to show the analytical limits of my system’s delay and frequency generation, as well as the analytical and practical calculations which show the accuracy of my PWM frequency and delay timing.</p>
+</section>
+<section id="delay-limits-calculations" class="level2">
+<h2 class="anchored" data-anchor-id="delay-limits-calculations">Delay Limits Calculations</h2>
+<p>I designed my delay system to run on Timer 6, the basic timer, set to generate an Update and set the UIF every millisecond (&lt;1% error from MSI and SYS_CLK). Given the design of this timer, it is not possible for my system to count delays under 1 millisecond. Thus, by design my <strong>minimum delay is 1 millisecond, with a minimum increment of 1 counting up</strong>.</p>
+<p>On the other hand, my maximum delay is far higher. This timer can run for as long as the MCU is receiving power, which I will assume to be infinitely long (barring the heat death of the universe… or a power outage). However, the MCU needs to knock down the UIF every time it wants to perform a delay. My delay function can only do this for as long as the for loop can continue counting up. Since the for loop counts until it reaches the variable <code>uint32_t milliseconds</code>, then the maximum value of <code>milliseconds</code> is the maximum amount of times that my <code>for</code> loop can be executed. We know that a 32 bit number of all binary 1s, more easily expressed as 0xFFFF FFFF, is equal to 4,294,967,295 milliseconds. Converting to a more human-friendly number, we may say that our <strong>maximum delay is about equal to 49.7 days</strong>.</p>
+</section>
+<section id="frequency-limits-calculations" class="level2">
+<h2 class="anchored" data-anchor-id="frequency-limits-calculations">Frequency Limits Calculations</h2>
+<p>The limits of my delay function are relatively simple – the limits of my frequency function are less so.</p>
+<p>The minimum frequency corresponds to the longest that the timer could count up to its Auto Reload Register. I load the register according to the following quotient function: ARR = TIMER_CLK/freq. Freq can only be an integer value, and we cannot divide by 0 (at the very least, it is undefined by C, even if it may by defined in SEGGER or CMSIS). So, it follows that we can set ARR highest by setting freq to 1. However, as I originally created the function, I did not realize that the 1x or 2x block was automatically set to 2x in my system. I was expecting a TIMER_CLK of 2.5 MHz, not 5 MHz. I noticed this error in testing, and although I initially couldn’t pinpoint the reason, I could fix it using my C function. To account for this 2x error, I passed the desired frequency into the function using a variable givenFreq. The passed variable relates to my actual freq variable as follows: <code>freq = givenFreq/2</code>. In effect, this doubles ARR, fixing the system. However, this fix means that the lowest frequency that I can actually pass into the function is givenFreq = 2, since this must be divided down to freq = 1. This quotient division on givenFreq thus sets my limiting factor. So, for my PWM frequency function, the <strong>minimum frequency that I can support is 2 Hz</strong>.</p>
+<p>The maximum frequency corresponds to the shortest that I could set the ARR. In this case, that would be at a value of 1, where givenFreq = 10,000,000, setting freq = 5,000,000, finally making ARR = 1. If the ARR is set to its natural extreme of 0, the counter stops counting. That is to say, we cannot set ARR lower than 1 and still have an output PWM, so this defines our highest frequency. with TIMER_CLK = 5 MHz, ARR = 1 essentially means that the PWM flips each clock cycle. So, the <strong>maximum frequency that I can support is 2.5 MHz</strong>.</p>
+</section>
+<section id="pwm-frequency-accuracy" class="level2">
+<h2 class="anchored" data-anchor-id="pwm-frequency-accuracy">PWM Frequency Accuracy</h2>
+<p>There are two types of supporting calculations that I can provide to back up the accuracy of my frequency PWM generation. Firstly, analytically, we know that TIM2 runs off an internal frequency of 5 MHz. There is some error introduced when I set the Auto Reload Register, since I make use of the quotient function in C, not a true divisor which would account for the remainder. The worst possible remainder on the range of [220-1000]Hz would be a leftover 999. This would equate to a percent error of 999 / 5 MHz, or less than 0.025% introduced error. So, analytically, I expect my PWM wave to be within the given spec of &lt;1% error. Additionally, the MSI internal clock which I use to generate my SYS_CLK is posted as having an error of &lt;1%. So, again, I expect my PWM wave to fall within spec.</p>
+<p>However, theory is not practice! Yet, I proved that my frequency is accurate there too, using an oscilloscope. For the set frequencies of 330Hz and 500 Hz, I generated the two oscilloscope plots below.</p>
+<div id="fig-330" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-330-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/oscope330hz.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-330-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: 330 Hz Oscilloscope Plot
+</figcaption>
+</figure>
+</div>
+<div id="fig-500" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-500-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/oscope500hz.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-500-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: 500 Hz Oscilloscope Plot
+</figcaption>
+</figure>
+</div>
+<p>By using the total elapsed time between x number of cycles, I was able to deduce the period of each wave. For the 330 and 500 Hz waves, each had a period of 3.05 and 2.01 milliseconds respectively. This corresponds to a frequency of 327.5 Hz and 497.5 Hz, indicating that my PWM is running the slightest bit slow. However, given respective errors of 0.75% and 0.5%, both tests demonstrate that my error in frequency generation is &lt;1%.</p>
+</section>
+<section id="delay-accuracy" class="level2">
+<h2 class="anchored" data-anchor-id="delay-accuracy">Delay Accuracy</h2>
+<p>I can also support my timer delay, albeit with a caveat. The delay timer that I build was constructed to have a delay of 1 milliseconds. In reality, however, it had a delay of closer to 0.6 milliseconds. I was unable to deduce why this is the case. In <a href="#fig-clock-block" class="quarto-xref">Figure&nbsp;2</a>, there is a 1x or 2x multiplier which I was unable to find the register to control. I wonder if this multiplier was set to 2x, meaning that my analytical timer would count 0.5 milliseconds instead of 1. If there was then some significant unaccounted for lag, either in the system startup, turn off, or with some counter reset, then this could easily turn 0.5 into 0.6 milliseconds. However, this delay was consistent. It was easier to instead scale my Auto Reload Register by the appropriate amount than it was to hunt for the source of this error. After changing it by approximately 1 / 0.6 = 67%, I was able to show with my oscilloscope that each 125 millisecond note played for 126 milliseconds – within a &lt;1% error spec, and within the error range of my MSI clock itself.</p>
+<div id="fig-delay" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-delay-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/oscopeDelay250ms.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-delay-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Proof of Accurate Delay (2x125ms notes)
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>And that’s that! I created a working system which, as the System Demo shows at the top, is capable of playing Für Elise and the Imperial March. Check out my Github code <a href="https://github.com/jacksonphilion/e155_lab4">here</a> for a more in depth view of the MCU code itself – I put my best effort into thoroughly commenting each function and header definition.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

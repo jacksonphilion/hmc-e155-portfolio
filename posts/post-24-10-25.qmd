@@ -2,9 +2,10 @@
 title: "Lab 4 Reflection, and a Foray Into AI "
 description: "A glimpse inside my first week trying to work smarter"
 author: "Jackson Philion"
-date: "10/18/24"
+date: "10/25/24"
 categories:
   - reflection
+  - labreport
 draft: false
 ---
 

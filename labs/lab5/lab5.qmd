@@ -78,7 +78,7 @@ Hardware schematic – note that VoltageSupply + and - refer to an external benc
 
 As I tested version two of this system – which counts pulses within a 500 millisecond framing window, instead of timing between pulses – I noted a constant error. My output values seemed to be near 20% lower than my actual RPS. How do I know? I measured it, using a tool called a tachometer. This handheld tool, seen working in the [video linked here](https://youtube.com/watch/Shzgm0OBXzI), uses a laser and reflective tape to accurately calculate the RPM of a mechanical system. Using this, I was able to generate the table in @fig-table, describing my MCU captured values against my Tachometer values.
 
-::: {#fig-schematic}
+::: {#fig-table}
 ![](images/table.png)
 
 Error table

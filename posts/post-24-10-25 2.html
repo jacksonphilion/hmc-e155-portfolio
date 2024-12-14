@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jackson Philion">
-<meta name="dcterms.date" content="2024-09-18">
-<meta name="description" content="A reflection on Lab 2 and why I made a wire octopus.">
+<meta name="dcterms.date" content="2024-10-25">
+<meta name="description" content="A glimpse inside my first week trying to work smarter">
 
-<title>Lab 2 Reflection – E155 Portfolio</title>
+<title>Lab 4 Reflection, and a Foray Into AI – E155 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,10 +131,6 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../finalProject.html"> 
-<span class="menu-text">Final Project</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
@@ -162,13 +158,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
-  <li><a href="#creating-a-housing-for-uprightness" id="toc-creating-a-housing-for-uprightness" class="nav-link" data-scroll-target="#creating-a-housing-for-uprightness">Creating a Housing for “Uprightness”</a></li>
-  <li><a href="#wiring-harness-1" id="toc-wiring-harness-1" class="nav-link" data-scroll-target="#wiring-harness-1">Wiring Harness #1</a></li>
-  <li><a href="#wiring-harness-2" id="toc-wiring-harness-2" class="nav-link" data-scroll-target="#wiring-harness-2">Wiring Harness #2</a></li>
-  <li><a href="#migration-to-a-bigger-board" id="toc-migration-to-a-bigger-board" class="nav-link" data-scroll-target="#migration-to-a-bigger-board">Migration to a Bigger Board</a></li>
-  <li><a href="#tragedy-twas-all-for-naught" id="toc-tragedy-twas-all-for-naught" class="nav-link" data-scroll-target="#tragedy-twas-all-for-naught">Tragedy – ’Twas all for naught</a></li>
-  <li><a href="#conclusion-and-reflection" id="toc-conclusion-and-reflection" class="nav-link" data-scroll-target="#conclusion-and-reflection">Conclusion and Reflection</a></li>
+  <li><a href="#my-ai-background" id="toc-my-ai-background" class="nav-link active" data-scroll-target="#my-ai-background">My AI Background</a></li>
+  <li><a href="#chatgpt-in-lab-4" id="toc-chatgpt-in-lab-4" class="nav-link" data-scroll-target="#chatgpt-in-lab-4">ChatGPT in Lab 4</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -177,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 2 Reflection</h1>
+<h1 class="title">Lab 4 Reflection, and a Foray Into AI</h1>
   <div class="quarto-categories">
     <div class="quarto-category">reflection</div>
     <div class="quarto-category">labreport</div>
@@ -186,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    A reflection on Lab 2 and why I made a wire octopus.
+    A glimpse inside my first week trying to work smarter
   </div>
 </div>
 
@@ -203,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 18, 2024</p>
+      <p class="date">October 25, 2024</p>
     </div>
   </div>
   
@@ -215,60 +207,25 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="intro" class="level2">
-<h2 class="anchored" data-anchor-id="intro">Intro</h2>
-<p>If I recall my reflection from Lab 1 correctly, its main refrain was: “This week was nice, and I learned a lot, but I’m scared for when things get not-so-nice”. Well, this week certainly toed that line, introducing some highs and lows that tested my resolve just a bit.</p>
-<p>And to think… the week started so well…</p>
-<p>When I first began Lab 2, I was (and this is the best word here) stoked. I was excited for a relatively easy lab that reused a lot of code from last week, taught me a new concept (time multiplexing), and had something cool to show for it. Thats why I got so excited when I saw the specification for Excellence, reading: “Digits on the seven-segment display are upright to the viewer.” At first, I wasn’t sure what to make of this specification. Prof Brake didn’t mean that the digits had to be <em>literally</em> upright – did he? If that was the case, I wondered… well, couldn’t you just tilt the breadboard up to face out towards a room? Surely that can’t be what he means.</p>
-<p>Then I asked a class TA and sure enough, he meant just that. I had to get my digits to stand physically upright.</p>
+<p><img src="images/24_10_25/chatGPT.png" class="img-fluid"></p>
+<p>Lab 4 was quite different from the prior labs in many ways. For starters, it represented a kind of new beginning. Labs 1 through 3 had all focused on using the FPGA, and had built on each other in a clear way. Lab 1 created the display system, Lab 2 doubled it, and Lab 3 refined the user input experience. Code was recycled, features were added, and the process felt iterative and like a deepening of learning in one particular area. In contrast, Lab 4 was all about learning new microcontroller memory structures, syntax, and modes of thinking.</p>
+<section id="my-ai-background" class="level2">
+<h2 class="anchored" data-anchor-id="my-ai-background">My AI Background</h2>
+<p>Now, before I go into more detail, it is worth mentioning what kind of background I have with AI – or, more accurately, I should say with ChatGPT. The answer is slim to none. I didn’t use it at all my Junior year in college, and only used it my sophomore year for some help writing effective thesis statements and summary conclusions. I found that I just didn’t trust it for much else, and even when I did, ended up spending about as much time trying to come up with a good prompt and refining my search. It felt like I got more learning for the same amount of time input, so I just kind of ignored the service.</p>
+<p>Flash forward to this week and ChatGPT has made somewhat of a resurgence in my world. It started when I was working next to Ket on Lab 4, and after creating my timer structures, I asked if I could see what his looked like to see if my syntax and ordering made sense. He said that he hadn’t gotten to that portion yet, and so I continued on for another about 5 minutes until he said he was ready to check. After he showed me his structure, I was shocked to see that it was as thoroughly commented as mine was, and matched nearly exactly. It took me 15+ minutes to check, double check, and add in thorough commenting – how had he made nearly the same product in 5? Turns out, he had written the structure by hand, written a comment format that he wanted, then asked ChatGPT to populate the rest of the comment fields with the appropriate offset and name of the register.</p>
+<p>Two things surprised to me about this. Firstly, that it nearly exactly matched the human-generated version that I had written. I think it speaks to how far models have come, even under the hood in the past two years. Secondly, I was surprised that I felt a drive in me to engage more with AI for these kinds of tasks. I have found myself to be otherwise very wary of ChatGPT, and I wasn’t expecting this new excitement to rise up. But as I sit here now, I’m thinking about applying it in areas where I’ve already done the hard part – I just need help expanding, commenting, or defining.</p>
 </section>
-<section id="creating-a-housing-for-uprightness" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-housing-for-uprightness">Creating a Housing for “Uprightness”</h2>
-<p>The more I thought about it, the more it represented an interesting challenge. Say you wanted to leave your breadboard flat on the table and read out the digits “upright to the viewer”. One would have to create some sort of contraption to hold the display in place in this upright position. Then, how would one get the electrical contacts to the LED display? A custom wiring harness would do it. As I peeked ahead at Lab 3, I saw that we will use the same hardware again… Wouldn’t that be something cool to bring forward? A standalone LED display with a custom wiring harness that connected up to my development board?</p>
-<p>With this idea in mind, and the hope that I had time to spare this week, I got straight to work on my hardware schematic and standalone display setup. I figured that I would need to design the hardware from the ground up in order to accommodate this detachable display. I cracked open my favorite CAD software (Onshape), grabbed a pair of calipers, and modelled up this little guy below.</p>
-<p><img src="images/lab2post/solidworksRender.png" class="img-fluid"></p>
-<p>After brushing up on my college’s 3D printing quizzes to gain access, I discovered that their suite of brand new machines would serve me incredibly well. Using an extra fine layer height (this is for presentation after all) I printed this result below. <img src="images/lab2post/rawPrint.jpeg" class="img-fluid"></p>
-<p>After checking the fit, I found it was perfect!</p>
-<p><img src="images/lab2post/displayInPrint.jpeg" class="img-fluid"></p>
-<p>I planned to loop back around later to make a stand for the housed display. That’s why the display housing has tabs to the right and left – a sturdier display with a hollow core could have rested flat on the desk and routed the wiring down through the display housing and out the back of the stand. I figured that I had a couple more steps to go before I got there though! While I was developing my code and block diagram in parallel, I started work on a wiring harness.</p>
+<section id="chatgpt-in-lab-4" class="level2">
+<h2 class="anchored" data-anchor-id="chatgpt-in-lab-4">ChatGPT in Lab 4</h2>
+<p>This manifested itself in one main way in Lab 4. After I had completed my music playing system, I wanted to implement a song of my own choosing. Intentionally wanting to experiment with ChatGPT as I wrote this optional addendum to my work, I first used ChatGPT to generate a list of ideas of songs that were clearly recognizable and simple to generate with a pure tone buzzer. After it gave me a standard list of Happy Birthday, Twinkle Twinkle Little Star, and Jingle Bells, I prompted it to come up with some more fun and interesting ideas for a young and nerdy college audience. This one was much more fun: Seven Nation Army, Super Mario Bros, Sweet Caroline, Blinding Lights… and the Imperial March from Star Wars! Inspired, I quickly chose a piece of sheet music and set about transcribing it into a C array of Frequencies and Durations.</p>
+<p>I ran into a barrier rather quickly, however – in fact, immediately. I don’t know how to read sheet music. This generated my next idea: Can ChatGPT take in images, and given the proper instructions, translate this into a playable C array? The answer: yes and no, but mostly no. Although it did generate a C array in my requested format, when I tried to play it, only the first three notes sounded right. After investigation and some learning on basic music theory, I realized that while most of the frequencies were correct, ChatGPT had made all of the timings the same, at a quarter note. News flash – the Imperial March does not have only quarter notes. So, I went about transcribing and correcting the output by hand, testing as I went.</p>
+<p>It took me another about 30 minutes to give up on this idea. No matter what I tried, or how I tried to break up the timing and add rests, it wasn’t playing correctly. It was around this point that I realized that the flaw might have been in the sheet music I found, or at least in my understanding of how to read the sheet music. It showed no visible rests, but some were clearly missing from what the tune should have sounded like. So, I moved to pivot to a new idea.</p>
+<p>At this impasse, I considered that somebody else had probably done this before. A quick google search pulled up Profe-Electro, an electronics Youtube creator, who had implemented a similar frequency and delay buzzer system on an Arduino. However, his system used the Arduino library of functions and a different format and note structure. This gave me my next idea – could ChatGPT translate this Arduino song into the same format that it had successfully generated for me previously? The answer: yes! After again asking ChatGPT to create me a list of define statements that mapped the sequence of notes to their frequency, I was able to easily implement the system into my C code and run the Imperial March.</p>
 </section>
-<section id="wiring-harness-1" class="level2">
-<h2 class="anchored" data-anchor-id="wiring-harness-1">Wiring Harness #1</h2>
-<p>It saddens me so greatly that I don’t have an image of this first harness. Sneak Peak: It didn’t work, and it failed epicly. Think, like, slow motion montage of everything falling apart. This was that.</p>
-<p>First, I reasoned through some design decisions. I figured that I would want to solder the wires to the display, so that they didn’t easily come off. However, I didn’t want to solder directly to the display pins. That would have left me in an odd spot if I wanted to change anything, or even if I just needed to adjust how the display sat in the housing. So, I snapped off two pieces of 1x9 female PCB headers. I figured that I could plug my display into these two rows, then solder my wires to the through hole pins. Next, I figured I would want to use stranded wire, to avoid fatigue breaks along the wire/solder. After all, I planned to use this guy for the next couple labs – that’s a lot of movement. But, I worried that the stranded wire could easily cause accidental connects once it was shoved up inside the display housing. The through hole pins on the header aren’t that strong either, and could bend together to touch. So, I figured that I would need to add some heat shrink tubing around each connect to make sure it wouldn’t need to be debugged in the future.</p>
-<p>It is worth noting at this point – I worked for a whole summer where half my job was wire harnesses. I won’t say I love them, because that sounds stupid. But I certainly like them. There is an elegance to an effective harness, and I rarely got to manufacture them myself. So if it sounds like I was going in too deep… I was.</p>
-<p>I wonder if anyone reading this will be able to predict my problem… I certainly wasn’t. First off, the stockroom was out of standard heat shrink tubing in small AWG sizes. They only had these wire-to-wire soldering tubes which fused and protected two separate wires. By cutting these in half and removing the solder in the middle, I was able to get a relatively standard piece of heat shrink tubing. I then got to soldering. I forgot how tricky this could be with stranded wire and only two hands! After an hour or so of soldering a whole PCB header’s worth, I slid my heat shrink down each wire and nestled it in at the base. I headed over to the heat gun that I had found in the analog lab, and turned on low heat.</p>
-<p>Instant problems. The heat shrink tubing I had rigged up apparently had the world’s highest shrinking point. I had to turn the gun up to high and hold it for several seconds to see any change. Do you know what, as it turns out, has a lower melting point? Solder. My solder. The solder I had spend an hour doing. So the whole thing fell apart in front of me.</p>
-<p>The plastic header was melting. The solder ran in rivers down each pin and pooling in the header. All pins were now one solid contact. The wires fell away as their solder melted. Their jackets dripped down around their frayed and solder-blackened edges. My heat shrink tubes were finally beginning to seal down – around nothing. With the wires gone, they instead sealed off the PCB pins from ever being used again.</p>
-<p>I basically made a really hot, very melted piece of multimedia art that was no longer capable of <em>any</em> useful function. And I am so sad that I did not get a picture of it.</p>
-</section>
-<section id="wiring-harness-2" class="level2">
-<h2 class="anchored" data-anchor-id="wiring-harness-2">Wiring Harness #2</h2>
-<p>My next idea was to use screw terminals as the “header”, or as the connection between display and wire. I figured that I could solder pins to pins and feel relatively confident that they would not make accidental electrical contacts. I could avoid soldering stranded wire entirely, expect maybe to make a solid end to plug into my breadboard.</p>
-<p>This idea was brilliant. It worked flawlessly. After tragedy, I cannot express how welcome success was. Check out the octopus of wires that now stuck out from my display housing – all perfectly secure and yet removable!</p>
-<p><img src="images/lab2post/octopusWires.jpeg" class="img-fluid"></p>
-<p>However, check out what happened when I tried to plug it in.</p>
-<p><img src="images/lab2post/ratsNest.jpeg" class="img-fluid"></p>
-<p>I named that image “Rats Nest”. Can you see why?</p>
-</section>
-<section id="migration-to-a-bigger-board" class="level2">
-<h2 class="anchored" data-anchor-id="migration-to-a-bigger-board">Migration to a Bigger Board</h2>
-<p>As soon as I went to actually interface this display with my breadboard, I realized that I was going to have a debugging problem. At this point, I had developed my code enough that I was ready to try running it on an actual display for the first time. I knew that I had thrown my hardware together hastily, anxious to try it out. I had used the only breadboard I had, which was now flying near max capacity. I was confident that if my solution didn’t work the first time, I would have to strip everything down and rewire it on a bigger breadboard. With this scary thought in mind, I plugged it in… and got nothing. Expletive. Pick your favorite.</p>
-<p>Just to drive the point home, this is what I was looking at as I tried to debug my completely non-functional system. I couldn’t get any oscilloscope or multimeter probes anywhere near where I needed them, and following individual wires was like trying to follow an individual spaghetti noodle as you held a wet clump in your hand. But, I have to say, nobody else had a display that floated (as far as I know).</p>
-<p><img src="images/lab2post/floatingDisplay.jpeg" class="img-fluid"></p>
-<p>After a tedious rewiring, I came to the final hardware solution presented in my Lab 2 report.</p>
-<p>What did I learn from this? Ironically, it wasn’t really a lesson learned as much as it was a lesson reminded. I traditionally make overly-neat, meticulously crafted breadboards. I cut each wire to perfect lie-flat length, bend each to fit around and over components, and use my favorite pair of needlenose pliers. What happened this time? Well, partly, I had components which literally floated. I also, however, missed the crucial step of laying out my components beforehand. I didn’t have a good understanding of how many rows I needed, to wire up components like my switches and display resistors. I put myself in a bad situation which I can avoid in the future by <em>completing</em> my design schematic before trying to build out half of it. Additionally, this was a reminder to leave a little wiggle room. My permanent move to a larger board should serve me well in this aspect, but it is worth repeating. I often treat my hardware like I plan to set-it and forget-it. As labs get more complex, this is less realistic.</p>
-</section>
-<section id="tragedy-twas-all-for-naught" class="level2">
-<h2 class="anchored" data-anchor-id="tragedy-twas-all-for-naught">Tragedy – ’Twas all for naught</h2>
-<p>At this point, I had resigned to prototyping on a flat display before trying out my new harness and standalone unit on a working final prototype. Working in lab one day, I heard my friend Alisha laughing at my octopus display. Alisha is one who is likely to strive for excellence marks, so I challenged her: “How did you meet that spec then?”</p>
-<p>She looked at me with blank eyes and said: “Jackson, what spec? It does not need to be upright.”</p>
-<p>After I confirmed with the professor that I had misread the spec, an incredulous me turned into an incredibly disappointed me. At this point, I had invested far more time into the lab than planned, and was no longer on track to finish it by my hopeful Thursday afternoon checkoff. I was willing to pursue the idea when it was an excellence spec, or when it wouldn’t cost me work on next week’s lab – neither condition was true any longer. So, I sadly paused work on my floating octopus and resigned to have my display lie flat like all the others. I resigned to just making sure that the display was “oriented upright to the viewer,” so that digits present themselves in a normal reading manner. Finishing the lab after that was short work – the trickiest part was writing the testbenches. But I lost a lot of flare for it after that. It just wasn’t as exciting any more.</p>
-</section>
-<section id="conclusion-and-reflection" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion-and-reflection">Conclusion and Reflection</h2>
-<p>I think the moral of the story here is that I got overexcited then burnt out too quickly. I still completed a successful lab, albeit way out of the time I had allotted. I still have a great write-up to show for it, and some cool parts that could one day stand alone. I learned a valuable lesson about clarifying specifications at the source, and paying closer attention to when I’m doing something that I don’t see anyone else doing. While that can sometimes be good, it is likely more often a sign that I had missed or misunderstood something. I am, after all, surrounded by some of the best and brightest at Mudd – I am far from the only overzealous one, and certainly not the only one striving to meet all excellence specs.</p>
-<p>In a more technical sense, I want to get better at writing my testbenches. I did alright this time around, but my display Multiplexer test bench only hit my personal <em>bare minimum</em>. The key thing holding me back here is understanding how to replace the HSOSC module with a testbench generated signal, and understanding how this plays into my test vector readout. I hesitated this time around because I didn’t want to spend forever debugging the <em>testbench</em> alone, rather than the real system. Increasing my proficiency on this front would be a great boon to my EE skills going forward, both in this course and as a practicing professional.</p>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>So, what came of this exploration? I learned that it was still very much possible to ask too much of ChatGPT. Whether its image recognition isn’t good enough yet, or my request caused it to jump over one too many hurdles, the result was clear – it couldn’t yet perform my whole task for me. However, it was effective at helping me with three parts of the lab. Firstly, it was great for brainstorming songs, and asking it which parts of the songs would be best translated into a buzzer song. Secondly, it was great for answering simple music theory questions that otherwise would have taken me a lot longer on Google. Finally, it was great for the tedious tasks – taking someone else’s existing ideas and translating them into a new format, or generating a list of macros for known frequencies.</p>
+<p>I think I could still do a lot to improve my use of AI – after all, this was my first week since 2022 that I gave it a concerted effort. I have a lot of room to improve my prompts, and I need to tinker more to refine my idea of what ChatGPT is <em>actually</em> good at. I’m not worried that I’ll become overconfident with my use of ChatGPT. I’m far more likely to quit using it because I feel that I cannot trust or rely on it (which we already know you can’t). So, I think it’s going to be a balancing act. I want to try to use it in scenarios where I can easily verify a non-mission critical output, but when the output myself requires repetition and simple translation. I like to imagine a world where I can expand this use in my future coding work, but for now, I just don’t have the confidence in ChatGPT’s work.</p>
 
 
 </section>
@@ -366,7 +323,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jacksonphilion\.github\.io\/hmc-e155-portfolio\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jackson Philion">
-<meta name="dcterms.date" content="2024-09-18">
-<meta name="description" content="A reflection on Lab 2 and why I made a wire octopus.">
+<meta name="dcterms.date" content="2024-10-18">
+<meta name="description" content="A new technique that I’m trying to great success">
 
-<title>Lab 2 Reflection – E155 Portfolio</title>
+<title>My New Hack for Debugging – E155 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,10 +131,6 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../finalProject.html"> 
-<span class="menu-text">Final Project</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
@@ -157,36 +153,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
-  <li><a href="#creating-a-housing-for-uprightness" id="toc-creating-a-housing-for-uprightness" class="nav-link" data-scroll-target="#creating-a-housing-for-uprightness">Creating a Housing for “Uprightness”</a></li>
-  <li><a href="#wiring-harness-1" id="toc-wiring-harness-1" class="nav-link" data-scroll-target="#wiring-harness-1">Wiring Harness #1</a></li>
-  <li><a href="#wiring-harness-2" id="toc-wiring-harness-2" class="nav-link" data-scroll-target="#wiring-harness-2">Wiring Harness #2</a></li>
-  <li><a href="#migration-to-a-bigger-board" id="toc-migration-to-a-bigger-board" class="nav-link" data-scroll-target="#migration-to-a-bigger-board">Migration to a Bigger Board</a></li>
-  <li><a href="#tragedy-twas-all-for-naught" id="toc-tragedy-twas-all-for-naught" class="nav-link" data-scroll-target="#tragedy-twas-all-for-naught">Tragedy – ’Twas all for naught</a></li>
-  <li><a href="#conclusion-and-reflection" id="toc-conclusion-and-reflection" class="nav-link" data-scroll-target="#conclusion-and-reflection">Conclusion and Reflection</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 2 Reflection</h1>
+<h1 class="title">My New Hack for Debugging</h1>
   <div class="quarto-categories">
     <div class="quarto-category">reflection</div>
-    <div class="quarto-category">labreport</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    A reflection on Lab 2 and why I made a wire octopus.
+    A new technique that I’m trying to great success
   </div>
 </div>
 
@@ -203,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 18, 2024</p>
+      <p class="date">October 18, 2024</p>
     </div>
   </div>
   
@@ -215,63 +198,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="intro" class="level2">
-<h2 class="anchored" data-anchor-id="intro">Intro</h2>
-<p>If I recall my reflection from Lab 1 correctly, its main refrain was: “This week was nice, and I learned a lot, but I’m scared for when things get not-so-nice”. Well, this week certainly toed that line, introducing some highs and lows that tested my resolve just a bit.</p>
-<p>And to think… the week started so well…</p>
-<p>When I first began Lab 2, I was (and this is the best word here) stoked. I was excited for a relatively easy lab that reused a lot of code from last week, taught me a new concept (time multiplexing), and had something cool to show for it. Thats why I got so excited when I saw the specification for Excellence, reading: “Digits on the seven-segment display are upright to the viewer.” At first, I wasn’t sure what to make of this specification. Prof Brake didn’t mean that the digits had to be <em>literally</em> upright – did he? If that was the case, I wondered… well, couldn’t you just tilt the breadboard up to face out towards a room? Surely that can’t be what he means.</p>
-<p>Then I asked a class TA and sure enough, he meant just that. I had to get my digits to stand physically upright.</p>
-</section>
-<section id="creating-a-housing-for-uprightness" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-housing-for-uprightness">Creating a Housing for “Uprightness”</h2>
-<p>The more I thought about it, the more it represented an interesting challenge. Say you wanted to leave your breadboard flat on the table and read out the digits “upright to the viewer”. One would have to create some sort of contraption to hold the display in place in this upright position. Then, how would one get the electrical contacts to the LED display? A custom wiring harness would do it. As I peeked ahead at Lab 3, I saw that we will use the same hardware again… Wouldn’t that be something cool to bring forward? A standalone LED display with a custom wiring harness that connected up to my development board?</p>
-<p>With this idea in mind, and the hope that I had time to spare this week, I got straight to work on my hardware schematic and standalone display setup. I figured that I would need to design the hardware from the ground up in order to accommodate this detachable display. I cracked open my favorite CAD software (Onshape), grabbed a pair of calipers, and modelled up this little guy below.</p>
-<p><img src="images/lab2post/solidworksRender.png" class="img-fluid"></p>
-<p>After brushing up on my college’s 3D printing quizzes to gain access, I discovered that their suite of brand new machines would serve me incredibly well. Using an extra fine layer height (this is for presentation after all) I printed this result below. <img src="images/lab2post/rawPrint.jpeg" class="img-fluid"></p>
-<p>After checking the fit, I found it was perfect!</p>
-<p><img src="images/lab2post/displayInPrint.jpeg" class="img-fluid"></p>
-<p>I planned to loop back around later to make a stand for the housed display. That’s why the display housing has tabs to the right and left – a sturdier display with a hollow core could have rested flat on the desk and routed the wiring down through the display housing and out the back of the stand. I figured that I had a couple more steps to go before I got there though! While I was developing my code and block diagram in parallel, I started work on a wiring harness.</p>
-</section>
-<section id="wiring-harness-1" class="level2">
-<h2 class="anchored" data-anchor-id="wiring-harness-1">Wiring Harness #1</h2>
-<p>It saddens me so greatly that I don’t have an image of this first harness. Sneak Peak: It didn’t work, and it failed epicly. Think, like, slow motion montage of everything falling apart. This was that.</p>
-<p>First, I reasoned through some design decisions. I figured that I would want to solder the wires to the display, so that they didn’t easily come off. However, I didn’t want to solder directly to the display pins. That would have left me in an odd spot if I wanted to change anything, or even if I just needed to adjust how the display sat in the housing. So, I snapped off two pieces of 1x9 female PCB headers. I figured that I could plug my display into these two rows, then solder my wires to the through hole pins. Next, I figured I would want to use stranded wire, to avoid fatigue breaks along the wire/solder. After all, I planned to use this guy for the next couple labs – that’s a lot of movement. But, I worried that the stranded wire could easily cause accidental connects once it was shoved up inside the display housing. The through hole pins on the header aren’t that strong either, and could bend together to touch. So, I figured that I would need to add some heat shrink tubing around each connect to make sure it wouldn’t need to be debugged in the future.</p>
-<p>It is worth noting at this point – I worked for a whole summer where half my job was wire harnesses. I won’t say I love them, because that sounds stupid. But I certainly like them. There is an elegance to an effective harness, and I rarely got to manufacture them myself. So if it sounds like I was going in too deep… I was.</p>
-<p>I wonder if anyone reading this will be able to predict my problem… I certainly wasn’t. First off, the stockroom was out of standard heat shrink tubing in small AWG sizes. They only had these wire-to-wire soldering tubes which fused and protected two separate wires. By cutting these in half and removing the solder in the middle, I was able to get a relatively standard piece of heat shrink tubing. I then got to soldering. I forgot how tricky this could be with stranded wire and only two hands! After an hour or so of soldering a whole PCB header’s worth, I slid my heat shrink down each wire and nestled it in at the base. I headed over to the heat gun that I had found in the analog lab, and turned on low heat.</p>
-<p>Instant problems. The heat shrink tubing I had rigged up apparently had the world’s highest shrinking point. I had to turn the gun up to high and hold it for several seconds to see any change. Do you know what, as it turns out, has a lower melting point? Solder. My solder. The solder I had spend an hour doing. So the whole thing fell apart in front of me.</p>
-<p>The plastic header was melting. The solder ran in rivers down each pin and pooling in the header. All pins were now one solid contact. The wires fell away as their solder melted. Their jackets dripped down around their frayed and solder-blackened edges. My heat shrink tubes were finally beginning to seal down – around nothing. With the wires gone, they instead sealed off the PCB pins from ever being used again.</p>
-<p>I basically made a really hot, very melted piece of multimedia art that was no longer capable of <em>any</em> useful function. And I am so sad that I did not get a picture of it.</p>
-</section>
-<section id="wiring-harness-2" class="level2">
-<h2 class="anchored" data-anchor-id="wiring-harness-2">Wiring Harness #2</h2>
-<p>My next idea was to use screw terminals as the “header”, or as the connection between display and wire. I figured that I could solder pins to pins and feel relatively confident that they would not make accidental electrical contacts. I could avoid soldering stranded wire entirely, expect maybe to make a solid end to plug into my breadboard.</p>
-<p>This idea was brilliant. It worked flawlessly. After tragedy, I cannot express how welcome success was. Check out the octopus of wires that now stuck out from my display housing – all perfectly secure and yet removable!</p>
-<p><img src="images/lab2post/octopusWires.jpeg" class="img-fluid"></p>
-<p>However, check out what happened when I tried to plug it in.</p>
-<p><img src="images/lab2post/ratsNest.jpeg" class="img-fluid"></p>
-<p>I named that image “Rats Nest”. Can you see why?</p>
-</section>
-<section id="migration-to-a-bigger-board" class="level2">
-<h2 class="anchored" data-anchor-id="migration-to-a-bigger-board">Migration to a Bigger Board</h2>
-<p>As soon as I went to actually interface this display with my breadboard, I realized that I was going to have a debugging problem. At this point, I had developed my code enough that I was ready to try running it on an actual display for the first time. I knew that I had thrown my hardware together hastily, anxious to try it out. I had used the only breadboard I had, which was now flying near max capacity. I was confident that if my solution didn’t work the first time, I would have to strip everything down and rewire it on a bigger breadboard. With this scary thought in mind, I plugged it in… and got nothing. Expletive. Pick your favorite.</p>
-<p>Just to drive the point home, this is what I was looking at as I tried to debug my completely non-functional system. I couldn’t get any oscilloscope or multimeter probes anywhere near where I needed them, and following individual wires was like trying to follow an individual spaghetti noodle as you held a wet clump in your hand. But, I have to say, nobody else had a display that floated (as far as I know).</p>
-<p><img src="images/lab2post/floatingDisplay.jpeg" class="img-fluid"></p>
-<p>After a tedious rewiring, I came to the final hardware solution presented in my Lab 2 report.</p>
-<p>What did I learn from this? Ironically, it wasn’t really a lesson learned as much as it was a lesson reminded. I traditionally make overly-neat, meticulously crafted breadboards. I cut each wire to perfect lie-flat length, bend each to fit around and over components, and use my favorite pair of needlenose pliers. What happened this time? Well, partly, I had components which literally floated. I also, however, missed the crucial step of laying out my components beforehand. I didn’t have a good understanding of how many rows I needed, to wire up components like my switches and display resistors. I put myself in a bad situation which I can avoid in the future by <em>completing</em> my design schematic before trying to build out half of it. Additionally, this was a reminder to leave a little wiggle room. My permanent move to a larger board should serve me well in this aspect, but it is worth repeating. I often treat my hardware like I plan to set-it and forget-it. As labs get more complex, this is less realistic.</p>
-</section>
-<section id="tragedy-twas-all-for-naught" class="level2">
-<h2 class="anchored" data-anchor-id="tragedy-twas-all-for-naught">Tragedy – ’Twas all for naught</h2>
-<p>At this point, I had resigned to prototyping on a flat display before trying out my new harness and standalone unit on a working final prototype. Working in lab one day, I heard my friend Alisha laughing at my octopus display. Alisha is one who is likely to strive for excellence marks, so I challenged her: “How did you meet that spec then?”</p>
-<p>She looked at me with blank eyes and said: “Jackson, what spec? It does not need to be upright.”</p>
-<p>After I confirmed with the professor that I had misread the spec, an incredulous me turned into an incredibly disappointed me. At this point, I had invested far more time into the lab than planned, and was no longer on track to finish it by my hopeful Thursday afternoon checkoff. I was willing to pursue the idea when it was an excellence spec, or when it wouldn’t cost me work on next week’s lab – neither condition was true any longer. So, I sadly paused work on my floating octopus and resigned to have my display lie flat like all the others. I resigned to just making sure that the display was “oriented upright to the viewer,” so that digits present themselves in a normal reading manner. Finishing the lab after that was short work – the trickiest part was writing the testbenches. But I lost a lot of flare for it after that. It just wasn’t as exciting any more.</p>
-</section>
-<section id="conclusion-and-reflection" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion-and-reflection">Conclusion and Reflection</h2>
-<p>I think the moral of the story here is that I got overexcited then burnt out too quickly. I still completed a successful lab, albeit way out of the time I had allotted. I still have a great write-up to show for it, and some cool parts that could one day stand alone. I learned a valuable lesson about clarifying specifications at the source, and paying closer attention to when I’m doing something that I don’t see anyone else doing. While that can sometimes be good, it is likely more often a sign that I had missed or misunderstood something. I am, after all, surrounded by some of the best and brightest at Mudd – I am far from the only overzealous one, and certainly not the only one striving to meet all excellence specs.</p>
-<p>In a more technical sense, I want to get better at writing my testbenches. I did alright this time around, but my display Multiplexer test bench only hit my personal <em>bare minimum</em>. The key thing holding me back here is understanding how to replace the HSOSC module with a testbench generated signal, and understanding how this plays into my test vector readout. I hesitated this time around because I didn’t want to spend forever debugging the <em>testbench</em> alone, rather than the real system. Increasing my proficiency on this front would be a great boon to my EE skills going forward, both in this course and as a practicing professional.</p>
+<p><img src="images/24_10_18/errorSegger.png" class="img-fluid" style="width:50.0%"></p>
+<p>With Lab 4 bringing about a switch in focus to our other hardware unit – the Microcontroller Unit (MCU)&nbsp;– I’ve been running into unfamiliar bugs. More than unfamiliar, some of the SEGGER error messages are downright unhelpful. On the other hand, I’ve grown quite fond of SystemVerilog and Lattice Radiant’s error messages. Sure, their line number is usually a couple off from the problem, but the error messages are descriptive and get the job done. I feel in control of SystemVerilog errors, and know almost instantly when one is going to require special attention. Now, in the land of the MCU, SEGGER, and C, I feel a bit lost with each new error message.</p>
+<p>I think of each debugging journey like a scavenger hunt. A SystemVerilog scavenger hunt might have a first clue that sends you to the third drawer of the old hutch in the attic. Inside, you find a spot the difference puzzle that reveals your final answer. Sure, the clues may be a mild challenge to locate, but the solution is typically straightforward and satisfying.</p>
+<p>On the other hand, in a C scavenger hunt the first clue you get is to find ‘something round’ in a forest of identical trees. After wandering around for a while, you find a note taped on a branch which reads “the second clue is written in invisible ink on the back of a squirrel.” Good luck.</p>
+<p>Now, in all fairness, give me a couple of weeks and I’m sure I’ll be able to tell you which squirrel to look for. After all, I haven’t brushed up on my C skills in nearly a year. However, the learning curve has proved to be steep.</p>
+<p>However, that isn’t the point of this post. I’m here to share what <em>has</em> gone well in the face of these seemingly intractable errors. I’ve found one particular technique that has helped me debug more efficiently and effectively, and it has the side benefit of building up my writing skills.</p>
+<p>For those who don’t know, our class has a Discord channel started by our professor. It has discussion sections for each of the labs, where students can post questions and (hopefully) get help from the professor and peers. People don’t post as much as I would have imagined –&nbsp;some labs have no discussion threads, while others have just one or two. I know that I haven’t posted in the past largely because it just hadn’t been used before. I always had a classmate around to ask if I really needed, or knew when the next office hours was to get help in person. However, as I drove off with my friends for October break, my most recent bug lingered in my mind. I had tried googling and parsing through my code, but had no good answer. I had decided that the next best step was to make dramatic changes in the structure of my code. In a last ditch attempt to avoid this, I figured that I might as well post my question in the discussion thread first. To my surprise, a classmate responded within 5 minutes and the professor responded before lunch. They both gave me some helpful keywords to use as I searched to understand and find a fix (turned out, “include guards” was half the problem).</p>
+<p>This emboldened me. After returning from break, I ran into a bug on Thursday night that stopped me in my tracks. After an hour spent trying to fix it, I got nowhere, and the same problematic lines of code were as broken as ever. Knowing that I wouldn’t be able to attend office hours until after the weekend, and knowing that I couldn’t afford to pause the work for 4 days, I went to craft a discussion thread to ask my peers and professor for help.</p>
+<p>The first time I tried to write the message, I quickly jotted down my thoughts in the span of a couple minutes. I hovered my mouse over the little arrow that meant “send”, then paused. Had I really tried <em>everything</em> I could think of to answer my own question? My brain flashed through the possible responses my peers could send… Have you checked the _____ section of the reference manual? Have you tried messing around with the lines of code directly before everything broke? The honest answer to many of these was – no. I had done some of the work myself, but I hadn’t yet exhausted every possible resource.</p>
+<p>As I realized this, my mission pivoted. I wanted to write the most bulletproof, well-reasoned explanation of my bug that I possibly could. I figured that throughout this process, I would either solve the problem on my own or come up with the an extremely well-documented bug report. The problem would either solve itself, or be worthy of a new post.</p>
+<p>Why has this idea only now come to my mind? As the semester has drawn on, I find it more challenging to work near my peers. Different classes consume us at different times, and several of my closest friends have makeshift laboratory setups in their own rooms. That is to say, I am more and more often working alone in the Digital Lab. This is why writing out discussion posts has been so valuable to me –&nbsp;it has reminded me the value of considering a fresh perspective, challenging my assumptions, and bouncing ideas off of a peer. It lets me go through that process without needing to wait until my next work block with Ket or office hours after the weekend.</p>
+<p>This is my new challenge to myself – I want to be more active in the class Discord discussion threads. Although there aren’t a plethora of other student posts, I want to make a more active effort to respond to them. More importantly, however, I want to commit to writing out my own questions more often. I want to commit to only sending them once I’m well and truly convinced that I have exhausted my own reserve of possibilities. I figure that if I adhere to this, I will become a better problem solver while I practice writing effective problem reports.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -366,7 +306,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jacksonphilion\.github\.io\/hmc-e155-portfolio\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jackson Philion">
-<meta name="dcterms.date" content="2024-09-18">
-<meta name="description" content="A reflection on Lab 2 and why I made a wire octopus.">
+<meta name="dcterms.date" content="2024-10-03">
+<meta name="description" content="A reflection on Lab 3 and Debugging in general.">
 
-<title>Lab 2 Reflection – E155 Portfolio</title>
+<title>Lab 3 Reflection – E155 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -131,10 +165,6 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../finalProject.html"> 
-<span class="menu-text">Final Project</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
@@ -163,12 +193,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
-  <li><a href="#creating-a-housing-for-uprightness" id="toc-creating-a-housing-for-uprightness" class="nav-link" data-scroll-target="#creating-a-housing-for-uprightness">Creating a Housing for “Uprightness”</a></li>
-  <li><a href="#wiring-harness-1" id="toc-wiring-harness-1" class="nav-link" data-scroll-target="#wiring-harness-1">Wiring Harness #1</a></li>
-  <li><a href="#wiring-harness-2" id="toc-wiring-harness-2" class="nav-link" data-scroll-target="#wiring-harness-2">Wiring Harness #2</a></li>
-  <li><a href="#migration-to-a-bigger-board" id="toc-migration-to-a-bigger-board" class="nav-link" data-scroll-target="#migration-to-a-bigger-board">Migration to a Bigger Board</a></li>
-  <li><a href="#tragedy-twas-all-for-naught" id="toc-tragedy-twas-all-for-naught" class="nav-link" data-scroll-target="#tragedy-twas-all-for-naught">Tragedy – ’Twas all for naught</a></li>
-  <li><a href="#conclusion-and-reflection" id="toc-conclusion-and-reflection" class="nav-link" data-scroll-target="#conclusion-and-reflection">Conclusion and Reflection</a></li>
+  <li><a href="#bug-one" id="toc-bug-one" class="nav-link" data-scroll-target="#bug-one">Bug One</a></li>
+  <li><a href="#bug-two" id="toc-bug-two" class="nav-link" data-scroll-target="#bug-two">Bug Two</a></li>
+  <li><a href="#general-wrap-up" id="toc-general-wrap-up" class="nav-link" data-scroll-target="#general-wrap-up">General Wrap Up</a></li>
   </ul>
 </nav>
     </div>
@@ -177,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 2 Reflection</h1>
+<h1 class="title">Lab 3 Reflection</h1>
   <div class="quarto-categories">
     <div class="quarto-category">reflection</div>
     <div class="quarto-category">labreport</div>
@@ -186,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    A reflection on Lab 2 and why I made a wire octopus.
+    A reflection on Lab 3 and Debugging in general.
   </div>
 </div>
 
@@ -203,7 +230,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 18, 2024</p>
+      <p class="date">October 3, 2024</p>
     </div>
   </div>
   
@@ -215,60 +242,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><img src="images/lab3post/debuggingrules.jpg" class="img-fluid"></p>
+<p>A large poster from David Agans hangs in the digital lab where I do my work, pinned right up above my favorite lab bench. I like it a lot – I find myself looking at it only <em>after</em> finding victory against a particularly tricky bug. I like picking out which steps of the process I just went through as I solved my bug. It reminds me that debugging is the other half of the digital design process, and that the seemingly ridiculous steps that one sometimes goes through when debugging are normal.</p>
 <section id="intro" class="level2">
 <h2 class="anchored" data-anchor-id="intro">Intro</h2>
-<p>If I recall my reflection from Lab 1 correctly, its main refrain was: “This week was nice, and I learned a lot, but I’m scared for when things get not-so-nice”. Well, this week certainly toed that line, introducing some highs and lows that tested my resolve just a bit.</p>
-<p>And to think… the week started so well…</p>
-<p>When I first began Lab 2, I was (and this is the best word here) stoked. I was excited for a relatively easy lab that reused a lot of code from last week, taught me a new concept (time multiplexing), and had something cool to show for it. Thats why I got so excited when I saw the specification for Excellence, reading: “Digits on the seven-segment display are upright to the viewer.” At first, I wasn’t sure what to make of this specification. Prof Brake didn’t mean that the digits had to be <em>literally</em> upright – did he? If that was the case, I wondered… well, couldn’t you just tilt the breadboard up to face out towards a room? Surely that can’t be what he means.</p>
-<p>Then I asked a class TA and sure enough, he meant just that. I had to get my digits to stand physically upright.</p>
+<p>Lab 3 was an enjoyable process for me. I enjoy the process and the puzzle that debugging presents, untangling details until you find a missing link. I like fixing small syntax errors which separate a working design from a broken mess, or finding some slight conceptual difference between the idea you had and the implementation you designed. I love finding the nuances in the system.</p>
+<p>This love helps me understand why two bugs in particular drove me so crazy during lab 3. I solved both of them, but understand neither. That is maddening – to stumble accidentally across the solution to a puzzle, and to know in your heart that you could not replicate the solution if you tried.</p>
 </section>
-<section id="creating-a-housing-for-uprightness" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-housing-for-uprightness">Creating a Housing for “Uprightness”</h2>
-<p>The more I thought about it, the more it represented an interesting challenge. Say you wanted to leave your breadboard flat on the table and read out the digits “upright to the viewer”. One would have to create some sort of contraption to hold the display in place in this upright position. Then, how would one get the electrical contacts to the LED display? A custom wiring harness would do it. As I peeked ahead at Lab 3, I saw that we will use the same hardware again… Wouldn’t that be something cool to bring forward? A standalone LED display with a custom wiring harness that connected up to my development board?</p>
-<p>With this idea in mind, and the hope that I had time to spare this week, I got straight to work on my hardware schematic and standalone display setup. I figured that I would need to design the hardware from the ground up in order to accommodate this detachable display. I cracked open my favorite CAD software (Onshape), grabbed a pair of calipers, and modelled up this little guy below.</p>
-<p><img src="images/lab2post/solidworksRender.png" class="img-fluid"></p>
-<p>After brushing up on my college’s 3D printing quizzes to gain access, I discovered that their suite of brand new machines would serve me incredibly well. Using an extra fine layer height (this is for presentation after all) I printed this result below. <img src="images/lab2post/rawPrint.jpeg" class="img-fluid"></p>
-<p>After checking the fit, I found it was perfect!</p>
-<p><img src="images/lab2post/displayInPrint.jpeg" class="img-fluid"></p>
-<p>I planned to loop back around later to make a stand for the housed display. That’s why the display housing has tabs to the right and left – a sturdier display with a hollow core could have rested flat on the desk and routed the wiring down through the display housing and out the back of the stand. I figured that I had a couple more steps to go before I got there though! While I was developing my code and block diagram in parallel, I started work on a wiring harness.</p>
+<section id="bug-one" class="level2">
+<h2 class="anchored" data-anchor-id="bug-one">Bug One</h2>
+<p>The first bug occurred when I implemented my system into hardware. It simulated perfectly and synthesized without error, but the FSM never even began. I tried most everything I could think of – I checked all my default cases, I checked the clock, I checked the state with debug LEDs, I checked to make sure the LEDs were working, I checked to see if the outputs matched any known state, but the only common thread was that something was broken and I couldn’t tell what. The fact that it simulated fine meant that the error was in the translation to hardware. Something about my system was either mistimed or improperly synthesized, such that the machine never even started, and the computer couldn’t catch it. After hours, I decided I would ask my professor, thinking that there was some higher knowledge I lacked which he could enlighten me with. After some time spent understanding my system, he agreed that something seemed wrong with my state registers, but wasn’t sure what. Most frustrating was when he said that my design might be programmed correctly, but that the synthesis software Radiant might be doing some behind-the-scenes magic that was actually breaking my system.</p>
+<p>That moment was the most disheartened I had been during MicroPs yet. It felt like I had done everything the way I was supposed to, and had built a functional system, but had drawn the short straw and was told “no”. I had given my best effort at debugging, and been firmly smacked back down. As I slowly started to accept that my next best option was to simply scrap the whole project and rewrite it from scratch, I just kept fiddling with the code. Eventually, it worked. I’m not even sure what I changed. I wasn’t making logical changes – I was just praying that some inconspicuous change in the document would fix the secret synthesis error that Radiant was so devilishly hiding. So it did – one time, when I ran it, the entire system worked perfectly.</p>
+<p>I estimate that the error was either with Radiant optimizing away my default cases or mishandling my state register. Or, it is very possible that this first error was caused by the same issue which caused the second terrible horrible no good very bad bug of lab 3.</p>
 </section>
-<section id="wiring-harness-1" class="level2">
-<h2 class="anchored" data-anchor-id="wiring-harness-1">Wiring Harness #1</h2>
-<p>It saddens me so greatly that I don’t have an image of this first harness. Sneak Peak: It didn’t work, and it failed epicly. Think, like, slow motion montage of everything falling apart. This was that.</p>
-<p>First, I reasoned through some design decisions. I figured that I would want to solder the wires to the display, so that they didn’t easily come off. However, I didn’t want to solder directly to the display pins. That would have left me in an odd spot if I wanted to change anything, or even if I just needed to adjust how the display sat in the housing. So, I snapped off two pieces of 1x9 female PCB headers. I figured that I could plug my display into these two rows, then solder my wires to the through hole pins. Next, I figured I would want to use stranded wire, to avoid fatigue breaks along the wire/solder. After all, I planned to use this guy for the next couple labs – that’s a lot of movement. But, I worried that the stranded wire could easily cause accidental connects once it was shoved up inside the display housing. The through hole pins on the header aren’t that strong either, and could bend together to touch. So, I figured that I would need to add some heat shrink tubing around each connect to make sure it wouldn’t need to be debugged in the future.</p>
-<p>It is worth noting at this point – I worked for a whole summer where half my job was wire harnesses. I won’t say I love them, because that sounds stupid. But I certainly like them. There is an elegance to an effective harness, and I rarely got to manufacture them myself. So if it sounds like I was going in too deep… I was.</p>
-<p>I wonder if anyone reading this will be able to predict my problem… I certainly wasn’t. First off, the stockroom was out of standard heat shrink tubing in small AWG sizes. They only had these wire-to-wire soldering tubes which fused and protected two separate wires. By cutting these in half and removing the solder in the middle, I was able to get a relatively standard piece of heat shrink tubing. I then got to soldering. I forgot how tricky this could be with stranded wire and only two hands! After an hour or so of soldering a whole PCB header’s worth, I slid my heat shrink down each wire and nestled it in at the base. I headed over to the heat gun that I had found in the analog lab, and turned on low heat.</p>
-<p>Instant problems. The heat shrink tubing I had rigged up apparently had the world’s highest shrinking point. I had to turn the gun up to high and hold it for several seconds to see any change. Do you know what, as it turns out, has a lower melting point? Solder. My solder. The solder I had spend an hour doing. So the whole thing fell apart in front of me.</p>
-<p>The plastic header was melting. The solder ran in rivers down each pin and pooling in the header. All pins were now one solid contact. The wires fell away as their solder melted. Their jackets dripped down around their frayed and solder-blackened edges. My heat shrink tubes were finally beginning to seal down – around nothing. With the wires gone, they instead sealed off the PCB pins from ever being used again.</p>
-<p>I basically made a really hot, very melted piece of multimedia art that was no longer capable of <em>any</em> useful function. And I am so sad that I did not get a picture of it.</p>
+<section id="bug-two" class="level2">
+<h2 class="anchored" data-anchor-id="bug-two">Bug Two</h2>
+<p>The second bug that occurred is even more maddening because I was able to pin the bug down to three lines of code. Mind you, four lines of code which should work perfectly normally. Three lines of code which were tied to the same debugging logic that I have been using since lab 1. Three lines which separated a completely broken system from a flawlessly working and synchronized keyboard scanner.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>// Working Code</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>assign led[1] = (rowSenseHold[0]);</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>assign led[2] = (rowSenseHold[1]);</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>assign led[3] = (rowSenseHold[2]);</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>/* Inexplicably Broken Code</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>assign led[1] = (state==verify);</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>assign led[2] = (state==hold);</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>assign led[3] = ((rowSenseHold==4'b0100)&amp;(colScanHold==4'b0100)); */</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The first thing that irks me about this bug is that I never would have caught it if I didn’t just keep tinkering around and exploring different sorts of errors. This is my debugging output logic, and I had no reason to find it faulty. I had no reason to change it except to learn more about the system. If this sort of error had occurred in a different part of the system that I wouldn’t have changed anyways, then I never would have caught it. It has absolutely nothing apparently connected to the synchronizer inputs which would cause the system to completely fail and lock up the way it did.</p>
+<p>The second problem I have with this bug is that I still don’t understand it. Don’t get me wrong – I have some theories. But they’re just that – theories. I spent a long time going back and forth between these three little lines and probing contacts with an oscilloscope to diagnose the issue, but found nothing of note. My current working theory is that I have some small and hidden short circuit on my board which is affecting the pins which control my scanning and state circuit. No other explanation seems plausible to me, other than some wild Radiant synthesis error. These line should have <em>no</em> effect on the state system, and yet they shut down every single part of it. Something about tying the state of these pins into the state of the machine is breaking the system. So, these pins must somehow be shorting to the other pins, or Radiant must be creating some internal short circuit. It could be some other explanation, but I have no worldly idea what that would be.</p>
 </section>
-<section id="wiring-harness-2" class="level2">
-<h2 class="anchored" data-anchor-id="wiring-harness-2">Wiring Harness #2</h2>
-<p>My next idea was to use screw terminals as the “header”, or as the connection between display and wire. I figured that I could solder pins to pins and feel relatively confident that they would not make accidental electrical contacts. I could avoid soldering stranded wire entirely, expect maybe to make a solid end to plug into my breadboard.</p>
-<p>This idea was brilliant. It worked flawlessly. After tragedy, I cannot express how welcome success was. Check out the octopus of wires that now stuck out from my display housing – all perfectly secure and yet removable!</p>
-<p><img src="images/lab2post/octopusWires.jpeg" class="img-fluid"></p>
-<p>However, check out what happened when I tried to plug it in.</p>
-<p><img src="images/lab2post/ratsNest.jpeg" class="img-fluid"></p>
-<p>I named that image “Rats Nest”. Can you see why?</p>
-</section>
-<section id="migration-to-a-bigger-board" class="level2">
-<h2 class="anchored" data-anchor-id="migration-to-a-bigger-board">Migration to a Bigger Board</h2>
-<p>As soon as I went to actually interface this display with my breadboard, I realized that I was going to have a debugging problem. At this point, I had developed my code enough that I was ready to try running it on an actual display for the first time. I knew that I had thrown my hardware together hastily, anxious to try it out. I had used the only breadboard I had, which was now flying near max capacity. I was confident that if my solution didn’t work the first time, I would have to strip everything down and rewire it on a bigger breadboard. With this scary thought in mind, I plugged it in… and got nothing. Expletive. Pick your favorite.</p>
-<p>Just to drive the point home, this is what I was looking at as I tried to debug my completely non-functional system. I couldn’t get any oscilloscope or multimeter probes anywhere near where I needed them, and following individual wires was like trying to follow an individual spaghetti noodle as you held a wet clump in your hand. But, I have to say, nobody else had a display that floated (as far as I know).</p>
-<p><img src="images/lab2post/floatingDisplay.jpeg" class="img-fluid"></p>
-<p>After a tedious rewiring, I came to the final hardware solution presented in my Lab 2 report.</p>
-<p>What did I learn from this? Ironically, it wasn’t really a lesson learned as much as it was a lesson reminded. I traditionally make overly-neat, meticulously crafted breadboards. I cut each wire to perfect lie-flat length, bend each to fit around and over components, and use my favorite pair of needlenose pliers. What happened this time? Well, partly, I had components which literally floated. I also, however, missed the crucial step of laying out my components beforehand. I didn’t have a good understanding of how many rows I needed, to wire up components like my switches and display resistors. I put myself in a bad situation which I can avoid in the future by <em>completing</em> my design schematic before trying to build out half of it. Additionally, this was a reminder to leave a little wiggle room. My permanent move to a larger board should serve me well in this aspect, but it is worth repeating. I often treat my hardware like I plan to set-it and forget-it. As labs get more complex, this is less realistic.</p>
-</section>
-<section id="tragedy-twas-all-for-naught" class="level2">
-<h2 class="anchored" data-anchor-id="tragedy-twas-all-for-naught">Tragedy – ’Twas all for naught</h2>
-<p>At this point, I had resigned to prototyping on a flat display before trying out my new harness and standalone unit on a working final prototype. Working in lab one day, I heard my friend Alisha laughing at my octopus display. Alisha is one who is likely to strive for excellence marks, so I challenged her: “How did you meet that spec then?”</p>
-<p>She looked at me with blank eyes and said: “Jackson, what spec? It does not need to be upright.”</p>
-<p>After I confirmed with the professor that I had misread the spec, an incredulous me turned into an incredibly disappointed me. At this point, I had invested far more time into the lab than planned, and was no longer on track to finish it by my hopeful Thursday afternoon checkoff. I was willing to pursue the idea when it was an excellence spec, or when it wouldn’t cost me work on next week’s lab – neither condition was true any longer. So, I sadly paused work on my floating octopus and resigned to have my display lie flat like all the others. I resigned to just making sure that the display was “oriented upright to the viewer,” so that digits present themselves in a normal reading manner. Finishing the lab after that was short work – the trickiest part was writing the testbenches. But I lost a lot of flare for it after that. It just wasn’t as exciting any more.</p>
-</section>
-<section id="conclusion-and-reflection" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion-and-reflection">Conclusion and Reflection</h2>
-<p>I think the moral of the story here is that I got overexcited then burnt out too quickly. I still completed a successful lab, albeit way out of the time I had allotted. I still have a great write-up to show for it, and some cool parts that could one day stand alone. I learned a valuable lesson about clarifying specifications at the source, and paying closer attention to when I’m doing something that I don’t see anyone else doing. While that can sometimes be good, it is likely more often a sign that I had missed or misunderstood something. I am, after all, surrounded by some of the best and brightest at Mudd – I am far from the only overzealous one, and certainly not the only one striving to meet all excellence specs.</p>
-<p>In a more technical sense, I want to get better at writing my testbenches. I did alright this time around, but my display Multiplexer test bench only hit my personal <em>bare minimum</em>. The key thing holding me back here is understanding how to replace the HSOSC module with a testbench generated signal, and understanding how this plays into my test vector readout. I hesitated this time around because I didn’t want to spend forever debugging the <em>testbench</em> alone, rather than the real system. Increasing my proficiency on this front would be a great boon to my EE skills going forward, both in this course and as a practicing professional.</p>
+<section id="general-wrap-up" class="level2">
+<h2 class="anchored" data-anchor-id="general-wrap-up">General Wrap Up</h2>
+<p>This brings me back to debugging in general. It brings me back to the poster, and the principles it touts. I think that a big one missing is to examine the parts of your system which seem obvious, simple, or unconnected. These assumptions are dangerous since they create a blind spot in your debugging vision. I never would have fixed bug two if not for questioning everything, and going back to basics with my debug logic to check every single piece. It was in the process of checking rowSenseHold, a variable that was so straightforward that I hadn’t even thought to check it before, that I revealed the bug in a wholly separate debug system.</p>
+<p>I also think, though, that the poster can be a bit overly optimistic. It carries the hopeful implication that all bugs can be solved with perserverence and new thinking. I think that this is only partly true. It is tricky to square this belief with the sort of Radiant synthesis errors that I may have been encountering. If they were truly Radiant synthesis bugs, then I am lacking the level of higher knowledge necessary to fix and understand them. That’s frustrating. It puts me in a place where I can no longer approach bugs logically. I have to try rewriting bits of code to solve bugs that I don’t understand, in the hopes that I hit the jackpot. If I don’t? Tough. That’s a disheartening thought.</p>
+<p>So, my relationship with debugging is growing stronger. I like it more and more, and feel more confident in many ways about debugging a complex system, and doing it efficiently. On the other hand, I encountered two errors that I don’t understand, and that could cripple me in the future. It feels like a dangerous game that I’m playing – how complex can I make my system before a bug that I could never expect and don’t understand brings it to its knees? Now, things change depending on what happened here in lab 3. If I find out a week from now that I really did have a short circuit error, then this entire case cracks open. I am put squarely back on firm footing, and given renewed confidence in my ability to diagnose and test for increasingly complex bugs. If, on the other hand, a similar bug in lab 5 presents itself and my only solution is to restart from scratch, or start taking a hatchet to chunks of code, then I will know that debugging has gotten the best of me this time.</p>
+<p>As it stands though, I don’t want to get too into the doom and gloom. The headline here is that I encountered two incredibly complex bugs and still came out with some theories and a working system. Again, I enjoyed the process, and feel more and more like a practicing digital designer with each lab. I’m excited to see what the next chapter brings, and looking forward to dipping my toes back into the world of MCUs and C. Until next time!</p>
 
 
 </section>
@@ -366,7 +373,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jacksonphilion\.github\.io\/hmc-e155-portfolio\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

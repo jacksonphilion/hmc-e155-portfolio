@@ -2,12 +2,24 @@
 title: "Past Experiences: Sol Clarity"
 description: "A Reflection on my Most Recent Job"
 author: "Jackson Philion"
-date: "10/29/24"
+date: "11/15/24"
 categories:
   - reflection
 draft: True
 ---
 
-Consider this the start of a (hopefully) multi-part series on this blog channel. As I spend time hunting and interviewing for my first full time position out of school, I'm reminded of the importance of reflecting back on past experiences. Not only is this experiential recall important for answering basic interview questions, but it also helps support a more robust understanding of how design processes and ideas interconnect. With this Past Experiences series, I hope to reinforce this learning and recall by reflecting on a particular highlighted project, job, or time in my life.
+Consider this the start of a (hopefully) multi-part series on this blog channel. As I spend time interviewing for my first full time position out of school, I'm reminded of the importance of reflecting back on past experiences. Not only is this experiential recall important for answering routine interview questions, but it also helps support a more robust understanding of my design processes and ideas. With this Past Experiences series, I hope to reinforce this learning and recall by reflecting on a particular job, project, or experience in my life.
 
-This week, I want to consider my most recent job at Sol Clarity, a start-up company just outside of Boston in Somerville, Massachusetts. 
+## Sol Clarity – Intro
+
+This week, I want to consider my most recent job. This past summer, I was abroad in New Zealand through the middle of July – that is to say, I only had about 6 weeks back in the States upon my return. Given this constraint, I didn't get a chance to pursue an internship before school started in August, and I took the opportunity to enjoy time with friends, family, and variant sudoku puzzles. So, my most recent professional role was actually the summer before, preceding my junior year. 
+
+I found a role as a hardware engineer at Sol Clarity, a start-up company just outside Boston in Somerville, Massachusetts. Founded by PhD graduates Ryan Eriksen and Annie Bernard, the company aims to take their work from Boston University and develop a commercial solar panel technology. The core functionality involves an electro-dynamic screen (EDS) consisting of micro-wires sandwiched between layers of clear plastic. By sending oscillating electrical signals down the wires, electrostatically charged particles like dust and dirt can be swept off of the surface of the screen. By minimizing the wire area and improving the clarity of the plastic, this EDS may be places on top of solar panels with only a minimal impact on efficiency. This screen could allow for hourly cleaning of solar panels, triggered remotely without the need for costly water, soap, or labor. This is especially relevant in desert regions, where solar panels are most efficient, since local crews and water are often geographically far away from the solar farms. Implemented successfully, the benefits of a consistently-cleaned panel which requires less maintenance would far outweigh any loss of efficiency or power draw due to the EDS.
+
+That is to say, I buy into the idea wholeheartedly. A similar technology has already been implemented by NASA to clean sensitive panels and instruments on satellites, where human cleaning is not feasible. Pretty cool stuff!
+
+Their work so far had been mostly constrained to a lab unit under test conditions. However, with an upcoming field trial of their first ever commercial-sized screens, their team was hunting for a hardware engineer to help them take care of the less glamorous parts. They wanted assistance with the wiring, enclosures, and other conversion factors to help take this lab system out into the field. This allowed their professional team to focus on the EDS control system, while making sure that someone was in charge of the non-trivial task of protecting and connecting the devices. 
+
+I was pretty psyched when I heard about the project and interviewed for the position. It seemed like it was the perfect role for a general engineer – a bit of mechanical knowledge, some electrical knowledge, and some broad lab and prototyping experience would come in handy. 
+
+Through work with the lead mechanical engineer, Frederick, and the hired electrical consultant, Mike, I got to learn about the system while designing custom hardware.

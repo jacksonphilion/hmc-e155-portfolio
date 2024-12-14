@@ -1,0 +1,13 @@
+---
+title: "Final Project"
+---
+
+Check out my Final Project [here](https://jacksonphilion.github.io/final-project-portfolio/)!
+
+My partner and I implemented a Fast Fourier Transform on our MCU which processed an audio signal. We captured the signal using the ADC and DMA after sending it through a custom analog amplifier. Then, we displayed the signal out to the user via an LCD driver built within our FPGA.
+
+Check out the final product and block diagram below, for reference. It was a pretty sweet system!
+
+![Final System](images/finishedSystem2.jpeg)
+
+![Block Diagram](images/blockDiagram.png)

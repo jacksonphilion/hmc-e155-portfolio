@@ -3,4 +3,4 @@ title: Lab 6
 ---
 ## Lab 6: The Internet of Things and Serial Peripheral Interface
 
-Due to changes in the course's arrangement and my own personal goals, my individual work on Lab 6 was paused in favor of group work towards the Final Project. Check out my report on the final project [here](https://jacksonphilion.github.io/final-project-portfolio/)! My partner and I implemented a Fast Fourier Transform on our MCU, to process and audio signal we captured through an analog amplifier using the ADC and DMA. Then, we displayed the signal out via an LCD driver on the FPGA.
+Due to changes in the course's arrangement and my personal goals, my individual work on Lab 6 was paused in favor of instead working towards the Final Project. Check out my report on the final project [here](https://jacksonphilion.github.io/final-project-portfolio/)! My partner and I implemented a Fast Fourier Transform on our MCU which processed an audio signal. We captured the signal using the ADC and DMA after sending it through a custom analog amplifier. Then, we displayed the signal out to the user via an LCD driver built within our FPGA.

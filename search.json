@@ -151,7 +151,7 @@
     "href": "labs/lab5/lab5.html",
     "title": "Lab 5",
     "section": "",
-    "text": "Quick Stats\nTime Spent: 14 Hours, iStoppedCounting minutes and seconds\nTimers Initialized: 2 - 1 = 1\nConsistent Surprise (you’ll see): 22%\nCMSIS: Used Effectively\nTimes I Asked Javier to Borrow the Tachometer: 1 (he just let me have it)\nIndividual Tachometer Measurements: &gt;100 (thanks Javier!)\nDC Motors in the Lab: Too Hard to Find\nOverall: Success"
+    "text": "Quick Stats\nTime Spent: 14 Hours, I stopped counting minutes and seconds\nTimers Initialized: 2 - 1 = 1\nConsistent Surprise (you’ll see): 22%\nCMSIS: Used Effectively\nTimes I Asked Xavier to Borrow the Tachometer: 1 (he just let me have it)\nIndividual Tachometer Measurements: &gt;100 (thanks Xavier!)\nDC Motors in the Lab: Too Hard to Find\nOverall: Success"
   },
   {
     "objectID": "labs/lab5/lab5.html#lab-5-interrupts",
@@ -200,14 +200,14 @@
     "href": "labs/lab6/lab6.html",
     "title": "Lab 6",
     "section": "",
-    "text": "Placeholder Text"
+    "text": "Due to changes in the course’s arrangement and my own personal goals, my individual work on Lab 6 was paused in favor of group work towards the Final Project. Check out my report on the final project here! My partner and I implemented a Fast Fourier Transform on our MCU, to process and audio signal we captured through an analog amplifier using the ADC and DMA. Then, we displayed the signal out via an LCD driver on the FPGA."
   },
   {
     "objectID": "labs/lab6/lab6.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
     "href": "labs/lab6/lab6.html#lab-6-the-internet-of-things-and-serial-peripheral-interface",
     "title": "Lab 6",
     "section": "",
-    "text": "Placeholder Text"
+    "text": "Due to changes in the course’s arrangement and my own personal goals, my individual work on Lab 6 was paused in favor of group work towards the Final Project. Check out my report on the final project here! My partner and I implemented a Fast Fourier Transform on our MCU, to process and audio signal we captured through an analog amplifier using the ADC and DMA. Then, we displayed the signal out via an LCD driver on the FPGA."
   },
   {
     "objectID": "labs/lab1/lab1.html",
@@ -263,14 +263,63 @@
     "href": "labs/lab7/lab7.html",
     "title": "Lab 7",
     "section": "",
-    "text": "Placeholder Text"
+    "text": "Quick Stats\nTime Spent: 17 Hours\nFSMs: surprisingly, only 2\nDesign Time | Build Time ratio: 50 | 50\nOverall: Simulated Successfully"
   },
   {
     "objectID": "labs/lab7/lab7.html#lab-7-the-advanced-encryption-standard",
     "href": "labs/lab7/lab7.html#lab-7-the-advanced-encryption-standard",
     "title": "Lab 7",
-    "section": "",
-    "text": "Placeholder Text"
+    "section": "Lab 7: The Advanced Encryption Standard",
+    "text": "Lab 7: The Advanced Encryption Standard\n\n\n\n\n\n\nFigure 1: Successful Testbench Highlight"
+  },
+  {
+    "objectID": "labs/lab7/lab7.html#lab-task-implement-aes-encryption-on-our-fpga",
+    "href": "labs/lab7/lab7.html#lab-task-implement-aes-encryption-on-our-fpga",
+    "title": "Lab 7",
+    "section": "Lab Task: Implement AES Encryption on our FPGA",
+    "text": "Lab Task: Implement AES Encryption on our FPGA\nThis lab challenges students to implement a system which encrypts a 128-bit message according to the Advanced Encryption Standard (AES) as outlined in the 46-page specification here. This lab is unique in that it is more prescribed than others. Rather than accomplish a task by any means we choose, this lab asks students to create an encryption device which mirrors every step of the well-known encryption algorithm. Students still have flexibility to design how we choose, but the final product must meet strict specifications in order to function as intended."
+  },
+  {
+    "objectID": "labs/lab7/lab7.html#getting-to-know-aes",
+    "href": "labs/lab7/lab7.html#getting-to-know-aes",
+    "title": "Lab 7",
+    "section": "Getting to know AES",
+    "text": "Getting to know AES\nI created the following flow diagram for myself to understand the system I planned to implement. Figure 2 shows the iterative process that AES performs. Given a 128-bit plaintext message and a 128-bit key message, our version of AES performs 10 rounds. Each step is described in detail within the AES standard, and serves to convolute and confuse the plaintext message in a predictable way until it results in an unintelligible 128-bit cyphertext message. The magic of the system is that a recipient who has the decryption key would be able to perfectly reverse the process and decipher the original plaintext message. However, to any interceptor without the decryption key, the encryption process is nearly impossible to reverse (even though each step is predictable)!\n\n\n\n\n\n\nFigure 2: AES Flow Diagram"
+  },
+  {
+    "objectID": "labs/lab7/lab7.html#implementing-as-hdl",
+    "href": "labs/lab7/lab7.html#implementing-as-hdl",
+    "title": "Lab 7",
+    "section": "Implementing as HDL",
+    "text": "Implementing as HDL\nWhen turning the AES process into implementable systemVerilog, I began by sketching a rough block diagram of the final top module. This left me with Figure 3 below.\n\n\n\n\n\n\nFigure 3: Rough top Module Block Diagram\n\n\n\nThe core module is the most complex, housing all of the logic necessary to support the 4 operations of AES. Further, the core module is responsible for coordinating these steps, setting appropriate delays, and asserting the final done output. In order to refine the process, I created Figure 4, a hardware-level design of what the core module might look like. Note that any hanging control signals are to be controlled by the embedded FSM – I created this block to understand how each part was connected, not yet how it was controlled.\n\n\n\n\n\n\nFigure 4: Core Block Diagram\n\n\n\nReading the specification, one realizes that the addroundkey function is relatively complex. The shiftRows and mixColumns functions are both fully executable using a combinational block with only 1 cycle of delay between storing the output. The subBytes function is more complex. It requires embedded RAM blocks to store a look up table for substitution, as well as 2 cycles of delay to account for the time it takes to fetch a value out of the table. Yet, this function was built largely for us within the starter code. This leaves us with the addroundkey function, which requires careful manipulation of individual bytes within the 128-bit originalKey according to the process roughly outlined in Figure 5 below.\n\n\n\n\n\n\nFigure 5: Rough Outline of Key Schedule Process\n\n\n\nThus, I also paid special attention to drawing the full hardware implementation of the addroundkey function out. I included a key_schedule module within to assist the function, and a key_fsm further embedded to control the litany of control signals and timing necessary.\n\n\n\n\n\n\nFigure 6: addroundkey Function Block Diagram"
+  },
+  {
+    "objectID": "labs/lab7/lab7.html#adding-control-signals-fsms",
+    "href": "labs/lab7/lab7.html#adding-control-signals-fsms",
+    "title": "Lab 7",
+    "section": "Adding Control Signals (FSMs)",
+    "text": "Adding Control Signals (FSMs)\nIn order to control the control signals within the key_schedule and core modules, I created two separate FSMs. They communicate with each other through the addroundkey Start and Done bits, with the core FSM directing the key FSM on when to begin a processing cycle. See the state diagrams in Figure 7 and Figure 8 below.\n\n\n\n\n\n\nFigure 7: core_fsm Module State Diagram\n\n\n\n\n\n\n\n\n\nFigure 8: key_fsm Module State Diagram"
+  },
+  {
+    "objectID": "labs/lab7/lab7.html#final-code",
+    "href": "labs/lab7/lab7.html#final-code",
+    "title": "Lab 7",
+    "section": "Final Code",
+    "text": "Final Code\nSee my github here for the full source code, organized as follows:\n\nThe MCU folder contains all custom libraries and the main.c source file necessary to run a complete SPI system between the MCU and FPGA. This code was given verbatim by Prof Brake in the Lab 7 Starter Code.\nThe FPGA folder contains a source folder, holding all of the source code (including aes.sv). It also includes the Lattice Radiant project, used to synthesize and download the source code, and the ModelSim project, used to simulate and debug the source code. Note that all non- aes.sv files in the source are part of the starter code package, as well as some parts of aes.sv. The core of my generative work may be found by reading this report or exploring aes.sv.\nThe notesAndExtras folder contains any additional notes, images, etc which support the project."
+  },
+  {
+    "objectID": "labs/lab7/lab7.html#simulation-results",
+    "href": "labs/lab7/lab7.html#simulation-results",
+    "title": "Lab 7",
+    "section": "Simulation Results",
+    "text": "Simulation Results\nAfter all this design work, my system simulated like a charm! I was quickly able to receive the testbench successful message, and verify by tracking the waveforms that my system responded as expected. Figure 9 and Figure 10 below show the beginning and end of the successful aes_core simulation, respectively. Note the successful run messages in the bottom left.\n\n\n\n\n\n\nFigure 9: aes_core Testbench Success – Beginning\n\n\n\n\n\n\n\n\n\nFigure 10: aes_core Testbench Success – Ending\n\n\n\nFinally, I was able to switch over to the SPI full-system testbench and similarly demonstrate success, as shown in Figure 11 below. Again, note the successful message in the bottom left.\n\n\n\n\n\n\nFigure 11: aes Full System Testbench Success"
+  },
+  {
+    "objectID": "labs/lab7/lab7.html#physical-hardware-results",
+    "href": "labs/lab7/lab7.html#physical-hardware-results",
+    "title": "Lab 7",
+    "section": "Physical Hardware Results",
+    "text": "Physical Hardware Results\nAs I moved to implement my system on my FPGA, I did not have to make any structural changes. I had already built my system to minimize the use of non-essential logic blocks. As such, I was able to easily synthesize and fit my logic on my FPGA.\nHowever, I did have some timing errors within some of my longer control signals which stretched throughout the system. Yet, I was able to easily fix these errors by halving my clock frequency, from 48 MHz to 24 MHz. Note that under these conditions, I expect my AES system to take about 5 µs to complete across a total of 135 clock cycles. Wicked fast!\nAs I downloaded and synthesized my system, I was disappointed to see that PA10, the “unsuccessful transmission” LED, lit up upon my first system test. I hooked it up to the logic analyzer to diagnose the problem. I was able to demonstrate that the MCU was correctly sending out ALL signals – including both the plaintext and originalKey messages. Figure 12 below shows the proper beginning 3 bytes of the plaintext message.\nNote on Logic Analyzer Lines For Figure 12 and Figure 13, D0 is CS, D1 is SCLK, D2 is COPI, D3 is CIPO. They are maddeningly mislabelled to the upper left and I could not remove these ghost labels.\n\n\n\n\n\n\n\n\n(a) Successful start to plaintext, h32\n\n\n\n\n\n\n\n(b) Successful next two bits, h43 & hF6\n\n\n\n\n\n\nFigure 12: Successful Plaintext Messages\n\n\n\nNext, I checked to ensure that the transition between plaintext and originalKey was flawless. Figure 13 below shows the proper transition on the logic analyzer, as well as the proper ending to originalKey.\n\n\n\n\n\n\n\n\n(a) Successful plaintext end, originalKey start, h34 & h2B\n\n\n\n\n\n\n\n(b) Successful end two bits of originalKey, h4F & h3C\n\n\n\n\n\n\nFigure 13: Successful originalKey Messages\n\n\n\nAdditionally, I went back and recreated these instances while tracking the Load and Done bits. Both operated as expected. The gap between the two is nearly exactly 5 µs, exactly as predicted by my analysis of the FPGA HDL system. Yet, the problem seems to arise once the FPGA begins to shift the cyphertext back out. Figure 14 below shows the first unsuccessful bit of cyphertext.\nNote on Logic Analyzer Lines For Figure 14, D0 is CS, D1 is SCLK, and D2 is COPI. Then, things change. D7 is CIPO, as the line was more reliable for some reason. I also added Load as D4, seen dropping low just at the start of Figure 14. Finally, I added Done on D5, shown asserting the expected 5 µs after Load drops.\n\n\n\n\n\n\nFigure 14: Unsuccessful Start to cyphertext (expected h39, actual hD9)\n\n\n\nAfter playing around with the timing, the simulation, and my FSMs, I was unable to reproduce or understand this error in any fixable way. It seems to simulate properly, but the hardware is errant somewhere. I double checked my switch positions (to make sure the MCU and FPGA were communicating properly), traced the logic analyzer bit-by-bit for an error (which would propagate throughout the entire cyphertext message), and considered multiple different orderings of resetting or activating the MCU and FPGAs independently. I checked the traces before these logic analyzer packets to check for errant data or Load/Done signals. My next steps would be to test with a partner’s hardware to isolate the problem down to either software or hardware – recall that I theorized I had a short somewhere on my FPGA in Lab 3. Although this is likely not the solution, since the logic analyzer signals acted as expected, I would be remiss not to try it. Then, I would begin slowly breaking out individual signals from within the FPGA and examining them on the logic analyzer. This seems to be the only surefire way to diagnose the issue, as all the software tools at my disposal seemed to indicate that the system should synthesize beautifully."
   },
   {
     "objectID": "labs/lab2/lab2.html",

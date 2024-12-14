@@ -156,6 +156,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#lab-7-the-advanced-encryption-standard" id="toc-lab-7-the-advanced-encryption-standard" class="nav-link active" data-scroll-target="#lab-7-the-advanced-encryption-standard">Lab 7: The Advanced Encryption Standard</a></li>
+  <li><a href="#lab-task-implement-aes-encryption-on-our-fpga" id="toc-lab-task-implement-aes-encryption-on-our-fpga" class="nav-link" data-scroll-target="#lab-task-implement-aes-encryption-on-our-fpga">Lab Task: Implement AES Encryption on our FPGA</a></li>
+  <li><a href="#getting-to-know-aes" id="toc-getting-to-know-aes" class="nav-link" data-scroll-target="#getting-to-know-aes">Getting to know AES</a></li>
+  <li><a href="#implementing-as-hdl" id="toc-implementing-as-hdl" class="nav-link" data-scroll-target="#implementing-as-hdl">Implementing as HDL</a></li>
+  <li><a href="#adding-control-signals-fsms" id="toc-adding-control-signals-fsms" class="nav-link" data-scroll-target="#adding-control-signals-fsms">Adding Control Signals (FSMs)</a></li>
+  <li><a href="#final-code" id="toc-final-code" class="nav-link" data-scroll-target="#final-code">Final Code</a></li>
+  <li><a href="#simulation-results" id="toc-simulation-results" class="nav-link" data-scroll-target="#simulation-results">Simulation Results</a></li>
+  <li><a href="#physical-hardware-results" id="toc-physical-hardware-results" class="nav-link" data-scroll-target="#physical-hardware-results">Physical Hardware Results</a></li>
   </ul>
 </nav>
     </div>
@@ -181,9 +188,232 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><strong>Quick Stats</strong><br>
+Time Spent: 17 Hours<br>
+FSMs: surprisingly, only 2<br>
+Design Time | Build Time ratio: 50 | 50<br>
+Overall: Simulated Successfully<br>
+</p>
 <section id="lab-7-the-advanced-encryption-standard" class="level2">
 <h2 class="anchored" data-anchor-id="lab-7-the-advanced-encryption-standard">Lab 7: The Advanced Encryption Standard</h2>
-<p>Placeholder Text</p>
+<div id="fig-demo" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/successfulRunHighlight.png" class="img-fluid figure-img" style="width:90.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Successful Testbench Highlight
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="lab-task-implement-aes-encryption-on-our-fpga" class="level2">
+<h2 class="anchored" data-anchor-id="lab-task-implement-aes-encryption-on-our-fpga">Lab Task: Implement AES Encryption on our FPGA</h2>
+<p>This lab challenges students to implement a system which encrypts a 128-bit message according to the Advanced Encryption Standard (AES) as outlined in the <a href="https://hmc-e155.github.io/assets/doc/NIST.FIPS.197-upd1.pdf">46-page specification here</a>. This lab is unique in that it is more prescribed than others. Rather than accomplish a task by any means we choose, this lab asks students to create an encryption device which mirrors every step of the well-known encryption algorithm. Students still have flexibility to design how we choose, but the final product must meet strict specifications in order to function as intended.</p>
+</section>
+<section id="getting-to-know-aes" class="level2">
+<h2 class="anchored" data-anchor-id="getting-to-know-aes">Getting to know AES</h2>
+<p>I created the following flow diagram for myself to understand the system I planned to implement. <a href="#fig-aes" class="quarto-xref">Figure&nbsp;2</a> shows the iterative process that AES performs. Given a 128-bit plaintext message and a 128-bit key message, our version of AES performs 10 rounds. Each step is described in detail within the <a href="https://hmc-e155.github.io/assets/doc/NIST.FIPS.197-upd1.pdf">AES standard</a>, and serves to convolute and confuse the plaintext message in a predictable way until it results in an unintelligible 128-bit cyphertext message. The magic of the system is that a recipient who has the decryption key would be able to perfectly reverse the process and decipher the original plaintext message. However, to any interceptor without the decryption key, the encryption process is nearly impossible to reverse (even though each step is predictable)!</p>
+<div id="fig-aes" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-aes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/aesProcess.jpg" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: AES Flow Diagram
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="implementing-as-hdl" class="level2">
+<h2 class="anchored" data-anchor-id="implementing-as-hdl">Implementing as HDL</h2>
+<p>When turning the AES process into implementable systemVerilog, I began by sketching a rough block diagram of the final top module. This left me with <a href="#fig-rough" class="quarto-xref">Figure&nbsp;3</a> below.</p>
+<div id="fig-rough" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rough-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/highLevelPlan.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rough-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Rough top Module Block Diagram
+</figcaption>
+</figure>
+</div>
+<p>The core module is the most complex, housing all of the logic necessary to support the 4 operations of AES. Further, the core module is responsible for coordinating these steps, setting appropriate delays, and asserting the final <code>done</code> output. In order to refine the process, I created <a href="#fig-core" class="quarto-xref">Figure&nbsp;4</a>, a hardware-level design of what the core module might look like. Note that any hanging control signals are to be controlled by the embedded FSM – I created this block to understand how each part was connected, not yet how it was controlled.</p>
+<div id="fig-core" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-core-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/coreBlockDiagram.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-core-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Core Block Diagram
+</figcaption>
+</figure>
+</div>
+<p>Reading the specification, one realizes that the addroundkey function is relatively complex. The shiftRows and mixColumns functions are both fully executable using a combinational block with only 1 cycle of delay between storing the output. The subBytes function is more complex. It requires embedded RAM blocks to store a look up table for substitution, as well as 2 cycles of delay to account for the time it takes to fetch a value out of the table. Yet, this function was built largely for us within the starter code. This leaves us with the addroundkey function, which requires careful manipulation of individual bytes within the 128-bit <code>originalKey</code> according to the process roughly outlined in <a href="#fig-key-sketch" class="quarto-xref">Figure&nbsp;5</a> below.</p>
+<div id="fig-key-sketch" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-key-sketch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/roughKey.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-key-sketch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Rough Outline of Key Schedule Process
+</figcaption>
+</figure>
+</div>
+<p>Thus, I also paid special attention to drawing the full hardware implementation of the addroundkey function out. I included a key_schedule module within to assist the function, and a key_fsm further embedded to control the litany of control signals and timing necessary.</p>
+<div id="fig-block-key" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-block-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/keyBlockDiagram.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-block-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: addroundkey Function Block Diagram
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="adding-control-signals-fsms" class="level2">
+<h2 class="anchored" data-anchor-id="adding-control-signals-fsms">Adding Control Signals (FSMs)</h2>
+<p>In order to control the control signals within the key_schedule and core modules, I created two separate FSMs. They communicate with each other through the addroundkey Start and Done bits, with the core FSM directing the key FSM on when to begin a processing cycle. See the state diagrams in <a href="#fig-state-core" class="quarto-xref">Figure&nbsp;7</a> and <a href="#fig-state-key" class="quarto-xref">Figure&nbsp;8</a> below.</p>
+<div id="fig-state-core" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-state-core-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/core_fsm.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-state-core-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: core_fsm Module State Diagram
+</figcaption>
+</figure>
+</div>
+<div id="fig-state-key" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-state-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/key_fsm.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-state-key-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: key_fsm Module State Diagram
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="final-code" class="level2">
+<h2 class="anchored" data-anchor-id="final-code">Final Code</h2>
+<p>See my github <a href="https://github.com/jacksonphilion/e155_lab7">here</a> for the full source code, organized as follows:</p>
+<ul>
+<li>The <code>MCU</code> folder contains all custom libraries and the main.c source file necessary to run a complete SPI system between the MCU and FPGA. This code was given verbatim by Prof Brake in the Lab 7 Starter Code.</li>
+<li>The <code>FPGA</code> folder contains a source folder, holding all of the source code (including aes.sv). It also includes the Lattice Radiant project, used to synthesize and download the source code, and the ModelSim project, used to simulate and debug the source code. Note that all non- aes.sv files in the source are part of the starter code package, as well as some parts of aes.sv. The core of my generative work may be found by reading this report or exploring aes.sv.</li>
+<li>The <code>notesAndExtras</code> folder contains any additional notes, images, etc which support the project.</li>
+</ul>
+</section>
+<section id="simulation-results" class="level2">
+<h2 class="anchored" data-anchor-id="simulation-results">Simulation Results</h2>
+<p>After all this design work, my system simulated like a charm! I was quickly able to receive the testbench successful message, and verify by tracking the waveforms that my system responded as expected. <a href="#fig-start-sim" class="quarto-xref">Figure&nbsp;9</a> and <a href="#fig-end-sim" class="quarto-xref">Figure&nbsp;10</a> below show the beginning and end of the successful aes_core simulation, respectively. Note the successful run messages in the bottom left.</p>
+<div id="fig-start-sim" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-start-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/coreStart.JPG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-start-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: aes_core Testbench Success – Beginning
+</figcaption>
+</figure>
+</div>
+<div id="fig-end-sim" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-end-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/coreEnd.JPG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-end-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: aes_core Testbench Success – Ending
+</figcaption>
+</figure>
+</div>
+<p>Finally, I was able to switch over to the SPI full-system testbench and similarly demonstrate success, as shown in <a href="#fig-SPI-sim" class="quarto-xref">Figure&nbsp;11</a> below. Again, note the successful message in the bottom left.</p>
+<div id="fig-SPI-sim" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-SPI-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/spiEnd.JPG" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-SPI-sim-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11: aes Full System Testbench Success
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="physical-hardware-results" class="level2">
+<h2 class="anchored" data-anchor-id="physical-hardware-results">Physical Hardware Results</h2>
+<p>As I moved to implement my system on my FPGA, I did not have to make any structural changes. I had already built my system to minimize the use of non-essential logic blocks. As such, I was able to easily synthesize and fit my logic on my FPGA.</p>
+<p>However, I did have some timing errors within some of my longer control signals which stretched throughout the system. Yet, I was able to easily fix these errors by halving my clock frequency, from 48 MHz to 24 MHz. Note that under these conditions, I expect my AES system to take about 5 µs to complete across a total of 135 clock cycles. Wicked fast!</p>
+<p>As I downloaded and synthesized my system, I was disappointed to see that PA10, the “unsuccessful transmission” LED, lit up upon my first system test. I hooked it up to the logic analyzer to diagnose the problem. I was able to demonstrate that the MCU was correctly sending out ALL signals –&nbsp;including both the plaintext and originalKey messages. <a href="#fig-plaintext" class="quarto-xref">Figure&nbsp;12</a> below shows the proper beginning 3 bytes of the plaintext message.</p>
+<p><strong>Note on Logic Analyzer Lines</strong> For <a href="#fig-plaintext" class="quarto-xref">Figure&nbsp;12</a> and <a href="#fig-transition" class="quarto-xref">Figure&nbsp;13</a>, D0 is CS, D1 is SCLK, D2 is COPI, D3 is CIPO. They are maddeningly mislabelled to the upper left and I could not remove these ghost labels.</p>
+<div id="fig-plaintext" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plaintext-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/logicAnalyzer/plaintextB0_h32.png" class="img-fluid figure-img"></p>
+<figcaption>(a) Successful start to plaintext, h32</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/logicAnalyzer/plaintextB1B2_h43_hF6.png" class="img-fluid figure-img"></p>
+<figcaption>(b) Successful next two bits, h43 &amp; hF6</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plaintext-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12: Successful Plaintext Messages
+</figcaption>
+</figure>
+</div>
+<p>Next, I checked to ensure that the transition between plaintext and originalKey was flawless. <a href="#fig-transition" class="quarto-xref">Figure&nbsp;13</a> below shows the proper transition on the logic analyzer, as well as the proper ending to originalKey.</p>
+<div id="fig-transition" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-transition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/logicAnalyzer/text_key_transition_h34_h2B.png" class="img-fluid figure-img"></p>
+<figcaption>(a) Successful plaintext end, originalKey start, h34 &amp; h2B</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/logicAnalyzer/key_B14B15_h4F_h3C.png" class="img-fluid figure-img"></p>
+<figcaption>(b) Successful end two bits of originalKey, h4F &amp; h3C</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-transition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;13: Successful originalKey Messages
+</figcaption>
+</figure>
+</div>
+<p>Additionally, I went back and recreated these instances while tracking the Load and Done bits. Both operated as expected. The gap between the two is nearly exactly 5 µs, exactly as predicted by my analysis of the FPGA HDL system. Yet, the problem seems to arise once the FPGA begins to shift the cyphertext back out. <a href="#fig-problem" class="quarto-xref">Figure&nbsp;14</a> below shows the first unsuccessful bit of cyphertext.</p>
+<p><strong>Note on Logic Analyzer Lines</strong> For <a href="#fig-problem" class="quarto-xref">Figure&nbsp;14</a>, D0 is CS, D1 is SCLK, and D2 is COPI. Then, things change. D7 is CIPO, as the line was more reliable for some reason. I also added Load as D4, seen dropping low just at the start of <a href="#fig-problem" class="quarto-xref">Figure&nbsp;14</a>. Finally, I added Done on D5, shown asserting the expected 5 µs after Load drops.</p>
+<div id="fig-problem" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-problem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/logicAnalyzer/firstCyphertext_hD9.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-problem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14: Unsuccessful Start to cyphertext (expected h39, actual hD9)
+</figcaption>
+</figure>
+</div>
+<p>After playing around with the timing, the simulation, and my FSMs, I was unable to reproduce or understand this error in any fixable way. It seems to simulate properly, but the hardware is errant somewhere. I double checked my switch positions (to make sure the MCU and FPGA were communicating properly), traced the logic analyzer bit-by-bit for an error (which would propagate throughout the entire cyphertext message), and considered multiple different orderings of resetting or activating the MCU and FPGAs independently. I checked the traces before these logic analyzer packets to check for errant data or Load/Done signals. My next steps would be to test with a partner’s hardware to isolate the problem down to either software or hardware – recall that I theorized I had a short somewhere on my FPGA in Lab 3. Although this is likely not the solution, since the logic analyzer signals acted as expected, I would be remiss not to try it. Then, I would begin slowly breaking out individual signals from within the FPGA and examining them on the logic analyzer. This seems to be the only surefire way to diagnose the issue, as all the software tools at my disposal seemed to indicate that the system should synthesize beautifully.</p>
 
 
 </section>
